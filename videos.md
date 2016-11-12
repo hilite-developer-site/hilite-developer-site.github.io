@@ -1,3 +1,8 @@
+---
+layout: default
+title: Videos
+---
+
 ## Deliverables
 
 Deliverables are the internal word for the actual UGVC that producers submit for curation.
