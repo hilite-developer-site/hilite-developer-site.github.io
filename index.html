@@ -2,8 +2,14 @@
 layout: default
 ---
 
+<h3>HILITE Docs</h3>
+
+<p>Welcome to the HILITE docs! Here you'll find everything you need to get started with the HILITE api.</p>
+
+<hr size="1" />
+
 <h3>Topics</h3>
-<ul>  
+<ul>
   {% for page in site.pages %}
     {% if page.title %}
       <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
