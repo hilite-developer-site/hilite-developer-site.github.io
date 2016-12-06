@@ -3,18 +3,43 @@ layout: default
 title: Campaigns
 ---
 
-## Tasks
+## Campaigns
 
-Tasks are the internal name for campaigns. Brands create tasks (campaigns) for producers to fulfill.
+Brands generate campaigns. This is usually done via our [admin console](https://admin.hilite.media) but, if you prefer to build your own the routes to do so are listed below. Campaigns both send requests to users, and contain all submitted [deliverables](/deliverables.html) for that campaign.
 
 
-### Create Task
+### Create Campaign
+    
+**Description**: Creates a new campaign 
 
-    DESCRIPTION: creates a task
-    METHOD: POST
-    URL: /v2/client/hilite/task/direct
-    PARAMS:
-      - TODO
+**Method**: `POST`
+
+**URL**: `/v1/campaigns?token=<TOKEN>`
+
+**Params**    
+      
+`uid :: string (required)` name of the campaign (ex. _"Super Bowl Victory Dance"_)
+`teleprompter :: string (required)` the text you wish to present to your users (ex. _"Show us your best victory dance!"_)
+
+**Example of a successful response**
+        
+    {
+      "responseCode": 200,
+      "task": { 
+        "assetProfile": {},
+        "uid": "someuniqueid",
+        "teleprompter": "test teleprompter",
+        "organizationId": "5846f3e75f6fd208001a8742",
+        "status": "curated - approved",
+        "type": "direct",
+        "eid": "someeventid",
+        "isRemoved": false,
+        "isPlayerHidden": false,
+        "createdAt": "2016-12-06T17:22:48.335Z",
+        "updatedAt": "2016-12-06T17:22:48.335Z",
+        "id": "5846f3e85f6fd208001a874c" 
+      }       
+    }    
 
 ### List Tasks
 
