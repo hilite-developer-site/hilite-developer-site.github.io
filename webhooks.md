@@ -26,7 +26,7 @@ We provide an interface to define these in our [admin console](https://admin.hil
             "description": "This hook fires when a new video is uploaded to one of your campaigns.",
             "webHookHandle": "ON_VIDEO_SUBMITTED",
             "organizationId": "abcdefghijklmnopqrstuvwxyz",
-            "url": https://example.com,
+            "url": "https://example.com",
             "id": "abcdefghijklmnopqrstuvwxyz",
             "createdAt": "2016-12-06T06:07:19.999Z",
             "updatedAt": "2016-12-06T06:07:19.999Z"
