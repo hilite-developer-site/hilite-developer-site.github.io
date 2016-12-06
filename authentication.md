@@ -23,8 +23,8 @@ All consumers of the HILITE api must be assigned a user account from the betacam
 **Example of a successful response**
         
     {
-        responseCode: 200,
-        data: {
-            token: abcd-efgh-jklm-nopq-rstuv-wxyz
+        "responseCode": 200,
+        "data": {
+            "token": "abcd-efgh-jklm-nopq-rstuv-wxyz"
         }
     }
