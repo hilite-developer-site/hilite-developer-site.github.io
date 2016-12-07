@@ -7,6 +7,7 @@ title: Campaigns
 
 Brands generate campaigns. This is usually done via our [admin console](https://admin.hilite.media) but, if you prefer to build your own, the routes to do so are listed below. Campaigns both send requests to users, and contain all submitted [deliverables](/deliverables.html) for that campaign.
 
+[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
 
 ### Create Campaign
     
@@ -45,7 +46,9 @@ Brands generate campaigns. This is usually done via our [admin console](https://
       }
     }    
 
-### Find All Campaigns
+[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
+
+### Find All
 
 **Description**: Returns all campaigns for your organization. 
 
@@ -111,8 +114,46 @@ Brands generate campaigns. This is usually done via our [admin console](https://
       }
     }    
 
+[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
 
-### Delete Campaign
+### Find One
+
+**Description**: Find one campaign by its ID 
+
+**Method**: `GET`
+
+**URL**: `/v1/campaigns/:id?token=<TOKEN>` 
+
+**Example of a successful response**
+
+    TODO
+
+[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
+
+### Update
+
+**Description**: Update a campaign
+
+**Method**: `PUT`
+
+**Params**
+
+`uid :: string` name of the campaign (ex. _"Super Bowl Victory Dance"_)
+
+`teleprompter :: string` the text you wish to present to your users (ex. _"Show us your best victory dance!"_)
+
+`preRoll :: string` Append a video pre roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.
+
+`postRoll :: string` Append a video post roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.
+
+**Example of a successful response**
+
+    TODO
+
+
+[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
+
+### Delete
 
 **Description**: Delete a campaign by its ID 
 
@@ -143,4 +184,5 @@ Brands generate campaigns. This is usually done via our [admin console](https://
         }
       }
     }
-    
+
+[//]: # ( TODO: findOneById, update,  destroyPreRoll, and destroyPostRoll)
