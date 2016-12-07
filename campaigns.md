@@ -3,339 +3,36 @@ layout: default
 title: Campaigns
 ---
 
-## Campaigns
+## {{ site.data.endpoints.campaigns.title }}
 
-Brands generate campaigns. This is usually done via our [admin console](https://admin.hilite.media) but, if you prefer to build your own, the routes to do so are listed below. Campaigns both send requests to users, and contain all submitted [deliverables](/deliverables.html) for that campaign.
+{{ site.data.endpoints.campaigns.description }}
 
-[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
+{% for endpoint in site.data.endpoints.campaigns.endpoints %}
 
-### Create Campaign
-    
-**Description**: Creates a new campaign 
+### **{{ endpoint.title }}**
 
-**Method**: `POST`
+**Description**: `{{ endpoint.description }}`
 
-**URL**: `/v1/campaigns?token=<TOKEN>`
+**Method**: `{{ endpoint.method }}`
+
+**URL**: `{{ endpoint.url }}?token=<TOKEN>`
 
 **Params**    
-      
-`uid :: string (required)` name of the campaign (ex. _"Super Bowl Victory Dance"_)
-`teleprompter :: string (required)` the text you wish to present to your users (ex. _"Show us your best victory dance!"_)
+
+{% for param in endpoint.params %}
+`{{ param.name }} :: {{ param.type }}{% if(param.isRequired) %} (required){% endif %}` {{ param.description }}`
+{% endfor %}
+
 
 **Example of a successful request**:
-
-{% include curl.html url="/v1/campaigns" method="POST" data="{\"uid\": \"My campaign name\", \"teleprompter\": \"Some teleprompter text\"}" %}
-
-**Example of a successful response**
-        
-    {
-      "responseCode": 200,
-      "data": {
-        "campaign": {
-          "assetProfile": {},
-          "uid": "someuniqueid",
-          "teleprompter": "test teleprompter",
-          "organizationId": "584750c589b67e0700048cc9",
-          "status": "curated - approved",
-          "createdAt": "2016-12-06T23:59:02.127Z",
-          "updatedAt": "2016-12-06T23:59:02.127Z",
-          "id": "584750c689b67e0700048cd3",
-          "organization": {
-            "name": "My Organization Name",            
-            "createdAt": "2016-12-06T23:59:01.430Z",
-            "updatedAt": "2016-12-06T23:59:01.430Z",
-            "id": "584750c589b67e0700048cc9"
-          }
-        }
-      }
-    }    
-
-[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
-
-### Find All
-
-**Description**: Returns all campaigns for your organization. 
-
-**Method**: `GET`
-
-**URL**: `/v1/campaigns?token=<TOKEN>`
-
-**Example of a successful request**:
-
-{% include curl.html url="/v1/campaigns" method="GET" %}
-
-**Example of a successful response**:
-
-    {
-      "responseCode": 200,
-      "data": {
-        "campaigns": [
-          {
-            "assetProfile": {},
-            "uid": "Campaign Name 1",
-            "teleprompter": "testing one",
-            "organizationId": "584753543748bc080054275d",
-            "status": "curated - approved",
-            "createdAt": "2016-12-07T00:09:56.903Z",
-            "updatedAt": "2016-12-07T00:09:56.903Z",
-            "id": "584753543748bc0800542762",
-            "organization": {
-              "name": "My Organization Name",          
-              "createdAt": "2016-12-07T00:09:56.361Z",
-              "updatedAt": "2016-12-07T00:09:56.361Z",
-              "id": "584753543748bc080054275d"
-            }
-          },
-          {
-            "assetProfile": {},
-            "uid": "Campaign Name 2",
-            "teleprompter": "testing two",
-            "organizationId": "584753543748bc080054275d",
-            "status": "curated - approved",
-            "createdAt": "2016-12-07T00:09:56.906Z",
-            "updatedAt": "2016-12-07T00:09:56.907Z",
-            "id": "584753543748bc0800542763",
-            "organization": {
-              "name": "My Organization Name",          
-              "createdAt": "2016-12-07T00:09:56.361Z",
-              "updatedAt": "2016-12-07T00:09:56.361Z",
-              "id": "584753543748bc080054275d"
-            }
-          },
-          {
-            "assetProfile": {},
-            "uid": "Campaign Name 3",
-            "teleprompter": "testing three",
-            "organizationId": "584753543748bc080054275d",
-            "status": "curated - approved",
-            "createdAt": "2016-12-07T00:09:56.909Z",
-            "updatedAt": "2016-12-07T00:09:56.909Z",
-            "id": "584753543748bc0800542764",
-            "organization": {
-              "name": "My Organization Name",          
-              "createdAt": "2016-12-07T00:09:56.361Z",
-              "updatedAt": "2016-12-07T00:09:56.361Z",
-              "id": "584753543748bc080054275d"
-            }
-          }
-        ]
-      }
-    }    
-
-[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
-
-### Find One
-
-**Description**: Find one campaign by its ID 
-
-**Method**: `GET`
-
-**URL**: `/v1/campaigns/:id?token=<TOKEN>` 
-
-**Example of a successful request**:
-
-{% include curl.html url="/v1/campaigns/584753543748bc0800542762" method="GET" %}
+    {% if endpoint.params %}
+    {% include curl.html url=endpoint.url method=endpoint.method data=endpoint.params %}
+    {% else %}
+    {% include curl.html url=endpoint.url method=endpoint.method %}
+    {% endif %}
 
 **Example of a successful response**
 
-    {
-      "responseCode": 200,
-      "data": {
-        "campaign": {
-          "assetProfile": {},
-          "uid": "My Campaign Name",
-          "teleprompter": "This is some teleprompter text",
-          "organizationId": "5848523a9e330308008dc295",
-          "status": "curated-approved",
-          "createdAt":"2016-12-06T23:59:02.127Z",
-          "updatedAt":"2016-12-06T23:59:02.127Z",
-          "id":"5848523b9e330308008dc298",
-          "organization":{
-            "name":"My Organization Name",
-            "createdAt":"2016-12-06T23:59:02.127Z",
-            "updatedAt":"2016-12-06T23:59:02.127Z",
-            "id":"5848523a9e330308008dc295"
-          }
-        }
-      }
-    }
+    {{ endpoint.responseExample | jsonify }}
 
-[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
-
-### Update
-
-**Description**: Update a campaign
-
-**Method**: `PUT`
-
-**Params**
-
-`uid :: string` name of the campaign (ex. _"Super Bowl Victory Dance"_)
-
-`teleprompter :: string` the text you wish to present to your users (ex. _"Show us your best victory dance!"_)
-
-`preRoll :: string` Append a video pre roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.
-
-`postRoll :: string` Append a video post roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.
-
-**Example of a successful request**:
-
-{% include curl.html url="/v1/campaigns" method="PUT" data="{\"uid\": \"My campaign name\", \"teleprompter\": \"Updated text\", \"preRoll\" : \"76124e30-7136-4211-b411-94ce7444e9eb\", \"postRoll\" : \"76124e30-7136-4211-b411-94ce7444e9eb\"}" %}
-
-**Example of a successful response**
-
-    {
-      "responseCode": 200,
-      "data": {
-        "campaign": {
-          "assetProfile": {},
-          "uid": "My Campaign Name",
-          "teleprompter": "This is some teleprompter text",
-          "organizationId": "5848523a9e330308008dc295",
-          "status": "curated-approved",
-          "createdAt":"2016-12-06T23:59:02.127Z",
-          "updatedAt":"2016-12-06T23:59:02.127Z",
-          "id":"5848523b9e330308008dc298",
-          "organization":{
-            "name":"My Organization Name",            
-            "createdAt":"2016-12-06T23:59:02.127Z",
-            "updatedAt":"2016-12-06T23:59:02.127Z",
-            "id":"5848523a9e330308008dc295"
-          }
-        }
-      }
-    }
-
-[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
-
-### Delete Pre Roll
-
-**Description**: Remove pre roll from a campaign. For now will only affect newly uploaded videos (it wont remove pre roll from videos already uploaded) but that will be coming in a future release.
-
-**Method**: `DELETE`
-
-**URL**: `/v1/campaigns/:id/preRoll?token=<TOKEN>`
-
-**Example of a successful request**:
-
-{% include curl.html url="/v1/campaigns/584753543748bc0800542762/preRoll" method="DELETE" %}
-
-**Example of a successful response**
-
-    {
-      "responseCode": 200,
-      "data": {
-        "campaign": {
-          "uid": "My Campaign Name",
-          "teleprompter": "This is some teleprompter text",
-          "organizationId": "584854990ea7cb08007d8b35",
-          "assetProfile": {
-            "postRoll": {
-              "organizationId": "584854990ea7cb08007d8b35",
-              "url": "http://someurl.mov",
-              "mimeType": "video/mov",
-              "createdAt": "2016-12-07T18:27:37.699Z",
-              "updatedAt": "2016-12-07T18:27:37.699Z",
-              "id": "584854990ea7cb08007d8b3b"
-            }
-          },
-          "status": "pending curation",
-          "createdAt": "2016-12-07T18:27:38.325Z",
-          "updatedAt": "2016-12-07T18:27:38.406Z",
-          "id": "5848549a0ea7cb08007d8b42",
-          "organization": {
-            "name":"My Organization Name",            
-            "createdAt": "2016-12-07T18:27:37.373Z",
-            "updatedAt": "2016-12-07T18:27:37.373Z",
-            "id": "584854990ea7cb08007d8b35"
-          }
-        }
-      }
-    }
-
-[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
-
-### Delete Post Roll
-
-**Description**: Remove post roll from a campaign. For now will only affect newly uploaded videos (it wont remove post roll from videos already uploaded) but that will be coming in a future release.
-
-**Method**: `DELETE`
-
-**URL**: `/v1/campaigns/:id/postRoll?token=<TOKEN>`
-
-**Example of a successful request**:
-
-{% include curl.html url="/v1/campaigns/584753543748bc0800542762/postRoll" method="DELETE" %}
-
-**Example of a successful response**
-
-    {
-      "responseCode": 200,
-      "data": {
-        "campaign": {
-          "uid": "My Campaign Name",
-          "teleprompter": "This is some teleprompter text",
-          "organizationId": "584854990ea7cb08007d8b35",
-          "assetProfile": {
-            "preRoll": {
-              "organizationId": "584854990ea7cb08007d8b35",
-              "url": "http://someurl.mov",
-              "mimeType": "video/mov",
-              "createdAt": "2016-12-07T18:27:37.699Z",
-              "updatedAt": "2016-12-07T18:27:37.699Z",
-              "id": "584854990ea7cb08007d8b3b"
-            }
-          },
-          "status": "pending curation",
-          "createdAt": "2016-12-07T18:27:38.325Z",
-          "updatedAt": "2016-12-07T18:27:38.406Z",
-          "id": "5848549a0ea7cb08007d8b42",
-          "organization": {
-            "name":"My Organization Name",            
-            "createdAt": "2016-12-07T18:27:37.373Z",
-            "updatedAt": "2016-12-07T18:27:37.373Z",
-            "id": "584854990ea7cb08007d8b35"
-          }
-        }
-      }
-    }
-
-[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
-
-### Delete
-
-**Description**: Delete a campaign by its ID 
-
-**Method**: `DELETE`
-
-**URL**: `/v1/campaigns?token=<TOKEN>`
-
-**Example of a successful request**:
-
-{% include curl.html url="/v1/campaigns/584753543748bc0800542762" method="DELETE" %}
-
-**Example of a successful response**
-
-    {
-      "responseCode": 200,
-      "data": {
-        "campaign": {
-          "assetProfile": {},
-          "uid": "someuniqueid",
-          "teleprompter": "test teleprompter",
-          "organizationId": "584750c589b67e0700048cc9",
-          "status": "curated - approved",
-          "createdAt": "2016-12-06T23:59:02.127Z",
-          "updatedAt": "2016-12-06T23:59:02.127Z",
-          "id": "584750c689b67e0700048cd3",
-          "organization": {
-            "name": "My Organization Name",            
-            "createdAt": "2016-12-06T23:59:01.430Z",
-            "updatedAt": "2016-12-06T23:59:01.430Z",
-            "id": "584750c589b67e0700048cc9"
-          }
-        }
-      }
-    }
-
-[//]: # ( TODO:  destroyPreRoll, and destroyPostRoll)
+{% endfor %} 

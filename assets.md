@@ -5,28 +5,7 @@ title: Assets
 
 ## Assets
 
-Routes relating to branding assets that organizations can use for UGVC Pre/Post roll etc.
-
-## List assets 
-    
-    DESCRIPTION: returns a list of all assets for an organization
-    METHOD: GET
-    URL: /v2/assets?token=<API TOKEN>      
-
-## Initiate upload
-    
-    DESCRIPTION: hands down a signed put URL that is then used for uploading files to S3
-    METHOD: POST     
-    URL: /v2/assets/initiateUpload
-
-## Complete upload
-    
-    DESCRIPTION: post s3 upload, creates an asset record
-    METHOD: POST
-    URL: /v2/assets/completeUpload
-
-## Delete asset
-    
-    DESCRIPTION: removes an asset (non destructively)
-    METHOD: 'DELETE
-    URL: /v2/assets/:id
+[//]: # ('GET      /v1/assets'                     : 'v2/AssetController.findAll', // returns a list of all assets for an organization)  
+[//]: # ('POST     /v1/assets/initiateUpload'      : 'v2/AssetController.initiateUpload', // hands down a signed put URL that is then used for uploading files to S3)  
+[//]: # ('POST     /v1/assets/completeUpload'      : 'v2/AssetController.completeUpload', // post s3 upload, creates an asset record)
+[//]: # ('DELETE   /v1/assets/:id'                 : 'v2/AssetController.destroy', // removes an asset (non destructively))

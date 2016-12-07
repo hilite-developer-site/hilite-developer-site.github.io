@@ -1,7 +1,19 @@
 {% if include.data %}
-    curl -X {{ include.method }} -H "Content-Type: application/json" -d '{{ include.data }}' "{{ include.url | prepend: site.api_host }}?token=76124e30-7136-4211-b411-94ce7444e9eb" 
+    
+    {% assign params =  '{' %}
+    {% for param in include.data %}        
+        {% assign params = params  | append: '"' | append: param.name  | append: '"' %}
+        {% assign params = params | append: " : " %}
+        {% assign params = params  | append: '"' | append: param.exampleValue  | append: '"' %}        
+        {% if forloop.last == false %} 
+        {% assign params = params | append: ', ' %}
+        {% endif %}
+    {% endfor %}
+    {% assign params =  params | append: '}' %}
+    
+    curl -X {{ include.method }} -H "Content-Type: application/json" -d '{{ params }}' "{{ include.url | prepend: site.api_host | replace: ':id', '584753543748bc0800542762' }}?token=76124e30-7136-4211-b411-94ce7444e9eb" 
 {% else %}
-    curl{% if include.method %} -X {{ include.method }} {% endif %} "{{ include.url | prepend: site.api_host}}?token=76124e30-7136-4211-b411-94ce7444e9eb"
+    curl{% if include.method %} -X {{ include.method }} {% endif %} "{{ include.url | prepend: site.api_host  | replace: ':id', '584753543748bc0800542762' }}?token=76124e30-7136-4211-b411-94ce7444e9eb"
 {% endif %}
 
 _remember to user your own token_
