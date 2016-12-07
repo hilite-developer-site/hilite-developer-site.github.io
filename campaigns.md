@@ -3,36 +3,4 @@ layout: default
 title: Campaigns
 ---
 
-## {{ site.data.endpoints.campaigns.title }}
-
-{{ site.data.endpoints.campaigns.description }}
-
-{% for endpoint in site.data.endpoints.campaigns.endpoints %}
-
-### **{{ endpoint.title }}**
-
-**Description**: `{{ endpoint.description }}`
-
-**Method**: `{{ endpoint.method }}`
-
-**URL**: `{{ endpoint.url }}?token=<TOKEN>`
-
-**Params**    
-
-{% for param in endpoint.params %}
-`{{ param.name }} :: {{ param.type }}{% if(param.isRequired) %} (required){% endif %}` {{ param.description }}`
-{% endfor %}
-
-
-**Example of a successful request**:
-    {% if endpoint.params %}
-    {% include curl.html url=endpoint.url method=endpoint.method data=endpoint.params %}
-    {% else %}
-    {% include curl.html url=endpoint.url method=endpoint.method %}
-    {% endif %}
-
-**Example of a successful response**
-
-    {{ endpoint.responseExample | jsonify }}
-
-{% endfor %} 
+{% include endpoint.html endpoint=site.data.endpoints.campaigns %} 
