@@ -5,7 +5,7 @@ title: Campaigns
 
 ## Campaigns
 
-Brands generate campaigns. This is usually done via our [admin console](https://admin.hilite.media) but, if you prefer to build your own the routes to do so are listed below. Campaigns both send requests to users, and contain all submitted [deliverables](/deliverables.html) for that campaign.
+Brands generate campaigns. This is usually done via our [admin console](https://admin.hilite.media) but, if you prefer to build your own, the routes to do so are listed below. Campaigns both send requests to users, and contain all submitted [deliverables](/deliverables.html) for that campaign.
 
 
 ### Create Campaign
@@ -25,20 +25,24 @@ Brands generate campaigns. This is usually done via our [admin console](https://
         
     {
       "responseCode": 200,
-      "task": { 
-        "assetProfile": {},
-        "uid": "someuniqueid",
-        "teleprompter": "test teleprompter",
-        "organizationId": "5846f3e75f6fd208001a8742",
-        "status": "curated - approved",
-        "type": "direct",
-        "eid": "someeventid",
-        "isRemoved": false,
-        "isPlayerHidden": false,
-        "createdAt": "2016-12-06T17:22:48.335Z",
-        "updatedAt": "2016-12-06T17:22:48.335Z",
-        "id": "5846f3e85f6fd208001a874c" 
-      }       
+      "data": {
+        "campaign": {
+          "assetProfile": {},
+          "uid": "someuniqueid",
+          "teleprompter": "test teleprompter",
+          "organizationId": "584750c589b67e0700048cc9",
+          "status": "curated - approved",
+          "createdAt": "2016-12-06T23:59:02.127Z",
+          "updatedAt": "2016-12-06T23:59:02.127Z",
+          "id": "584750c689b67e0700048cd3",
+          "organization": {
+            "name": "My Organization Name",            
+            "createdAt": "2016-12-06T23:59:01.430Z",
+            "updatedAt": "2016-12-06T23:59:01.430Z",
+            "id": "584750c589b67e0700048cc9"
+          }
+        }
+      }
     }    
 
 ### List Tasks
