@@ -1,0 +1,8 @@
+{% if include.data %}
+    curl -X {{ include.method }} -H "Content-Type: application/json" -d '{{ include.data }}' "{{ include.url | prepend: site.api_host }}?token=76124e30-7136-4211-b411-94ce7444e9eb" 
+{% else %}
+    curl{% if include.method %} -X {{ include.method }} {% endif %} "{{ include.url | prepend: site.api_host}}?token=76124e30-7136-4211-b411-94ce7444e9eb"
+{% endif %}
+
+_remember to user your own token_
+
