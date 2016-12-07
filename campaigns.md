@@ -185,4 +185,4 @@ Brands generate campaigns. This is usually done via our [admin console](https://
       }
     }
 
-[//]: # ( TODO: findOneById, update,  destroyPreRoll, and destroyPostRoll)
+[//]: # ( TODO:  destroyPreRoll, and destroyPostRoll)
