@@ -126,7 +126,27 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 
 **Example of a successful response**
 
-    TODO
+    {
+      "responseCode": 200,
+      "data": {
+        "campaign": {
+          "assetProfile": {},
+          "uid": "My Campaign Name",
+          "teleprompter": "This is some teleprompter text",
+          "organizationId": "5848523a9e330308008dc295",
+          "status": "curated-approved",
+          "createdAt":"2016-12-06T23:59:02.127Z",
+          "updatedAt":"2016-12-06T23:59:02.127Z",
+          "id":"5848523b9e330308008dc298",
+          "organization":{
+            "name":"My Organization Name",
+            "createdAt":"2016-12-06T23:59:02.127Z",
+            "updatedAt":"2016-12-06T23:59:02.127Z",
+            "id":"5848523a9e330308008dc295"
+          }
+        }
+      }
+    }
 
 [//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
 
@@ -148,7 +168,28 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 
 **Example of a successful response**
 
-    TODO
+    {
+      "responseCode": 200,
+      "data": {
+        "campaign": {
+          "assetProfile": {},
+          "uid": "My Campaign Name",
+          "teleprompter": "This is some teleprompter text",
+          "organizationId": "5848523a9e330308008dc295",
+          "status": "curated-approved",
+          "createdAt":"2016-12-06T23:59:02.127Z",
+          "updatedAt":"2016-12-06T23:59:02.127Z",
+          "id":"5848523b9e330308008dc298",
+          "organization":{
+            "name":"My Organization Name",
+            "isRemoved":false,
+            "createdAt":"2016-12-06T23:59:02.127Z",
+            "updatedAt":"2016-12-06T23:59:02.127Z",
+            "id":"5848523a9e330308008dc295"
+          }
+        }
+      }
+    }
 
 
 [//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
