@@ -112,8 +112,35 @@ Brands generate campaigns. This is usually done via our [admin console](https://
     }    
 
 
-### Delete Task
+### Delete Campaign
 
-    DESCRIPTION: deletes a task by id
-    METHOD: DELETE
-    URL: /v2/client/hilite/task/:id
+**Description**: Delete a campaign by its ID 
+
+**Method**: `DELETE`
+
+**URL**: `/v1/campaigns?token=<TOKEN>`
+
+**Example of a successful response**
+
+    {
+      "responseCode": 200,
+      "data": {
+        "campaign": {
+          "assetProfile": {},
+          "uid": "someuniqueid",
+          "teleprompter": "test teleprompter",
+          "organizationId": "584750c589b67e0700048cc9",
+          "status": "curated - approved",
+          "createdAt": "2016-12-06T23:59:02.127Z",
+          "updatedAt": "2016-12-06T23:59:02.127Z",
+          "id": "584750c689b67e0700048cd3",
+          "organization": {
+            "name": "My Organization Name",            
+            "createdAt": "2016-12-06T23:59:01.430Z",
+            "updatedAt": "2016-12-06T23:59:01.430Z",
+            "id": "584750c589b67e0700048cc9"
+          }
+        }
+      }
+    }
+    
