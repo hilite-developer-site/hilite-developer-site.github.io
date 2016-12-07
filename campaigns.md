@@ -181,8 +181,7 @@ Brands generate campaigns. This is usually done via our [admin console](https://
           "updatedAt":"2016-12-06T23:59:02.127Z",
           "id":"5848523b9e330308008dc298",
           "organization":{
-            "name":"My Organization Name",
-            "isRemoved":false,
+            "name":"My Organization Name",            
             "createdAt":"2016-12-06T23:59:02.127Z",
             "updatedAt":"2016-12-06T23:59:02.127Z",
             "id":"5848523a9e330308008dc295"
@@ -191,6 +190,91 @@ Brands generate campaigns. This is usually done via our [admin console](https://
       }
     }
 
+[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
+
+### Delete Pre Roll
+
+**Description**: Remove pre roll from a campaign. For now will only affect newly uploaded videos (it wont remove pre roll from videos already uploaded) but that will be coming in a future release.
+
+**Method**: `DELETE`
+
+**URL**: `/v1/campaigns/preRoll?token=<TOKEN>`
+
+**Example of a successful response**
+
+    {
+      "responseCode": 200,
+      "data": {
+        "campaign": {
+          "uid": "My Campaign Name",
+          "teleprompter": "This is some teleprompter text",
+          "organizationId": "584854990ea7cb08007d8b35",
+          "assetProfile": {
+            "postRoll": {
+              "organizationId": "584854990ea7cb08007d8b35",
+              "url": "http://someurl.mov",
+              "mimeType": "video/mov",
+              "createdAt": "2016-12-07T18:27:37.699Z",
+              "updatedAt": "2016-12-07T18:27:37.699Z",
+              "id": "584854990ea7cb08007d8b3b"
+            }
+          },
+          "status": "pending curation",
+          "createdAt": "2016-12-07T18:27:38.325Z",
+          "updatedAt": "2016-12-07T18:27:38.406Z",
+          "id": "5848549a0ea7cb08007d8b42",
+          "organization": {
+            "name":"My Organization Name",            
+            "createdAt": "2016-12-07T18:27:37.373Z",
+            "updatedAt": "2016-12-07T18:27:37.373Z",
+            "id": "584854990ea7cb08007d8b35"
+          }
+        }
+      }
+    }
+
+[//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
+
+### Delete Post Roll
+
+**Description**: Remove post roll from a campaign. For now will only affect newly uploaded videos (it wont remove post roll from videos already uploaded) but that will be coming in a future release.
+
+**Method**: `DELETE`
+
+**URL**: `/v1/campaigns/postRoll?token=<TOKEN>`
+
+**Example of a successful response**
+
+    {
+      "responseCode": 200,
+      "data": {
+        "campaign": {
+          "uid": "My Campaign Name",
+          "teleprompter": "This is some teleprompter text",
+          "organizationId": "584854990ea7cb08007d8b35",
+          "assetProfile": {
+            "preRoll": {
+              "organizationId": "584854990ea7cb08007d8b35",
+              "url": "http://someurl.mov",
+              "mimeType": "video/mov",
+              "createdAt": "2016-12-07T18:27:37.699Z",
+              "updatedAt": "2016-12-07T18:27:37.699Z",
+              "id": "584854990ea7cb08007d8b3b"
+            }
+          },
+          "status": "pending curation",
+          "createdAt": "2016-12-07T18:27:38.325Z",
+          "updatedAt": "2016-12-07T18:27:38.406Z",
+          "id": "5848549a0ea7cb08007d8b42",
+          "organization": {
+            "name":"My Organization Name",            
+            "createdAt": "2016-12-07T18:27:37.373Z",
+            "updatedAt": "2016-12-07T18:27:37.373Z",
+            "id": "584854990ea7cb08007d8b35"
+          }
+        }
+      }
+    }
 
 [//]: # (----------------------------------------------------------------------------------------------------------------------------------------)
 
