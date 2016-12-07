@@ -271,5 +271,33 @@
         }
       }
     ]
+  },
+  "authentication": {
+    "title": "Authenticating a request",
+    "description": "All consumers of the HILITE api must be assigned a user account from the betacamp team. We plan to automate this process in the future via a developer console. Upon account creation a user is issued an api token. *All requests must include this token*. The expected format is `https://api.hilite.media/v2/route?token=<TOKEN>`. At present there is no expiration date on this token but it can be revoked by the betacamp team at any time.",
+    "endpoints": [
+      {
+        "title": "Token Retreival",
+        "description": "Returns an authorization token for use in subsequent requests. It is the responsibility of the client to store this token for later retrieval. For web based clients we suggest storing it in a cookie or local storage.",
+        "method": "POST",
+        "url": "/v1/authenticate",
+        "params": [
+          {
+            "name": "identifier",
+            "type": "string",
+            "isRequired": true,
+            "description": "Your username",
+            "exampleValue": "johnnyappleseed"
+          },
+          {
+            "name": "password",
+            "type": "string",
+            "isRequired": true,
+            "description": "Your password",
+            "exampleValue": "topsecretpassword"
+          }
+        ]
+      }
+    ]
   }
 }
