@@ -22,6 +22,10 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 `uid :: string (required)` name of the campaign (ex. _"Super Bowl Victory Dance"_)
 `teleprompter :: string (required)` the text you wish to present to your users (ex. _"Show us your best victory dance!"_)
 
+**Example of a successful request**:
+
+{% include curl.html url="/v1/campaigns" method="POST" data="{\"uid\": \"My campaign name\", \"teleprompter\": \"Some teleprompter text\"}" %}
+
 **Example of a successful response**
         
     {
@@ -56,7 +60,11 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 
 **URL**: `/v1/campaigns?token=<TOKEN>`
 
-**Example of a successful response**
+**Example of a successful request**:
+
+{% include curl.html url="/v1/campaigns" method="GET" %}
+
+**Example of a successful response**:
 
     {
       "responseCode": 200,
@@ -124,6 +132,10 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 
 **URL**: `/v1/campaigns/:id?token=<TOKEN>` 
 
+**Example of a successful request**:
+
+{% include curl.html url="/v1/campaigns/584753543748bc0800542762" method="GET" %}
+
 **Example of a successful response**
 
     {
@@ -166,6 +178,10 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 
 `postRoll :: string` Append a video post roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.
 
+**Example of a successful request**:
+
+{% include curl.html url="/v1/campaigns" method="PUT" data="{\"uid\": \"My campaign name\", \"teleprompter\": \"Updated text\", \"preRoll\" : \"76124e30-7136-4211-b411-94ce7444e9eb\", \"postRoll\" : \"76124e30-7136-4211-b411-94ce7444e9eb\"}" %}
+
 **Example of a successful response**
 
     {
@@ -198,7 +214,11 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 
 **Method**: `DELETE`
 
-**URL**: `/v1/campaigns/preRoll?token=<TOKEN>`
+**URL**: `/v1/campaigns/:id/preRoll?token=<TOKEN>`
+
+**Example of a successful request**:
+
+{% include curl.html url="/v1/campaigns/584753543748bc0800542762/preRoll" method="DELETE" %}
 
 **Example of a successful response**
 
@@ -241,7 +261,11 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 
 **Method**: `DELETE`
 
-**URL**: `/v1/campaigns/postRoll?token=<TOKEN>`
+**URL**: `/v1/campaigns/:id/postRoll?token=<TOKEN>`
+
+**Example of a successful request**:
+
+{% include curl.html url="/v1/campaigns/584753543748bc0800542762/postRoll" method="DELETE" %}
 
 **Example of a successful response**
 
@@ -285,6 +309,10 @@ Brands generate campaigns. This is usually done via our [admin console](https://
 **Method**: `DELETE`
 
 **URL**: `/v1/campaigns?token=<TOKEN>`
+
+**Example of a successful request**:
+
+{% include curl.html url="/v1/campaigns/584753543748bc0800542762" method="DELETE" %}
 
 **Example of a successful response**
 
