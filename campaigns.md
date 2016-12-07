@@ -45,16 +45,71 @@ Brands generate campaigns. This is usually done via our [admin console](https://
       }
     }    
 
-### List Tasks
+### Find All Campaigns
 
-    DESCRIPTION: retrieves all active tasks for an api users organization
-    METHOD: GET
-    URL: /v2/client/hilite/task/direct
-    PARAMS:
-      - eid (optional) :: string
-        - unique id for an event or other special occasion
-      - uid (optional) :: string
-        - unique id for a campaign
+**Description**: Returns all campaigns for your organization. 
+
+**Method**: `GET`
+
+**URL**: `/v1/campaigns?token=<TOKEN>`
+
+**Example of a successful response**
+
+    {
+      "responseCode": 200,
+      "data": {
+        "campaigns": [
+          {
+            "assetProfile": {},
+            "uid": "Campaign Name 1",
+            "teleprompter": "testing one",
+            "organizationId": "584753543748bc080054275d",
+            "status": "curated - approved",
+            "createdAt": "2016-12-07T00:09:56.903Z",
+            "updatedAt": "2016-12-07T00:09:56.903Z",
+            "id": "584753543748bc0800542762",
+            "organization": {
+              "name": "My Organization Name",          
+              "createdAt": "2016-12-07T00:09:56.361Z",
+              "updatedAt": "2016-12-07T00:09:56.361Z",
+              "id": "584753543748bc080054275d"
+            }
+          },
+          {
+            "assetProfile": {},
+            "uid": "Campaign Name 2",
+            "teleprompter": "testing two",
+            "organizationId": "584753543748bc080054275d",
+            "status": "curated - approved",
+            "createdAt": "2016-12-07T00:09:56.906Z",
+            "updatedAt": "2016-12-07T00:09:56.907Z",
+            "id": "584753543748bc0800542763",
+            "organization": {
+              "name": "My Organization Name",          
+              "createdAt": "2016-12-07T00:09:56.361Z",
+              "updatedAt": "2016-12-07T00:09:56.361Z",
+              "id": "584753543748bc080054275d"
+            }
+          },
+          {
+            "assetProfile": {},
+            "uid": "Campaign Name 3",
+            "teleprompter": "testing three",
+            "organizationId": "584753543748bc080054275d",
+            "status": "curated - approved",
+            "createdAt": "2016-12-07T00:09:56.909Z",
+            "updatedAt": "2016-12-07T00:09:56.909Z",
+            "id": "584753543748bc0800542764",
+            "organization": {
+              "name": "My Organization Name",          
+              "createdAt": "2016-12-07T00:09:56.361Z",
+              "updatedAt": "2016-12-07T00:09:56.361Z",
+              "id": "584753543748bc080054275d"
+            }
+          }
+        ]
+      }
+    }    
 
 
 ### Delete Task
