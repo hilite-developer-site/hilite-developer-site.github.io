@@ -19,7 +19,11 @@ All consumers of the HILITE api must be assigned a user account from the betacam
       
     - identifier :: string (required)
     - password   :: string (required)
-      
+
+**Example of a successful request**:
+
+{% include curl.html url="/v1/authenticate" method="POST" data="{\"identifier\": \"johnnyappleseed\", \"password\": \"topsecretpassword\"}" %}
+
 **Example of a successful response**
         
     {
