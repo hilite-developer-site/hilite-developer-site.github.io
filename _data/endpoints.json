@@ -166,7 +166,45 @@
           "description": "Append a video post roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.",
           "exampleValue": "76124e30-7136-4211-b411-94ce7444e9eb"
         }
-      ]
+      ],
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "campaign": {
+            "assetProfile": {
+              "postRoll": {
+                "organizationId": "584854990ea7cb08007d8b35",
+                "url": "http://someurl.mov",
+                "mimeType": "video/mov",
+                "createdAt": "2016-12-07T18:27:37.699Z",
+                "updatedAt": "2016-12-07T18:27:37.699Z",
+                "id": "584854990ea7cb08007d8b3b"
+              },
+              "preRoll": {
+                "organizationId": "584854990ea7cb08007d8b35",
+                "url": "http://someurl.mov",
+                "mimeType": "video/mov",
+                "createdAt": "2016-12-07T18:27:37.699Z",
+                "updatedAt": "2016-12-07T18:27:37.699Z",
+                "id": "584854990ea7cb08007d8b3b"
+              }
+            },
+            "uid": "My Campaign Name",
+            "teleprompter": "This is some updated teleprompter text",
+            "organizationId": "584750c589b67e0700048cc9",
+            "status": "curated - approved",
+            "createdAt": "2016-12-06T23:59:02.127Z",
+            "updatedAt": "2016-12-06T23:59:02.127Z",
+            "id": "584750c689b67e0700048cd3",
+            "organization": {
+              "name": "My Organization Name",
+              "createdAt": "2016-12-06T23:59:01.430Z",
+              "updatedAt": "2016-12-06T23:59:01.430Z",
+              "id": "584750c589b67e0700048cc9"
+            }
+          }
+        }
+      }
     },
     {
       "title": "Delete Pre Roll",
