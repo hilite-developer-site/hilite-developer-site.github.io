@@ -388,7 +388,7 @@
           "type": "string",
           "isRequired": true,
           "description": "Name of the file to upload. Please note that all additional path information will be stripped away.",
-          "exampleValue": "somefile.mov"  
+          "exampleValue": "somefile.mov"
         },
         {
           "name": "mimeType",
@@ -403,6 +403,184 @@
         "data": {
           "signed_request": "https://cdn.hilite.media/hilite/organizations/5848a31595be370700e39a62/assets/somefile.jpg?Content-Type=image%2Fjpeg&Expires=1481156790&Signature=NsFcwBNkiwDL6j3WGVCHAX8ymF8%3D&x-amz-acl=public-read",
           "method": "PUT"
+        }
+      }
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Find All",
+      "description": "Return all deliverables for your organization",
+      "method": "GET",
+      "url": "/v1/deliverables",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "deliverables": [
+            {
+              "responseCode": 200,
+              "data": {
+                "deliverables": [
+                  {
+                    "url": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/example.mov",
+                    "taskId": "5849b53583454e01002791bb",
+                    "status": "pending curation",
+                    "producer": {
+                      "passports": [],
+                      "username": "johnnyappleseed",
+                      "email": "johnnyappleseed@hilite.media",
+                      "displayName": "Johnny Appleseed",
+                      "profiles": [],
+                      "producerProfile": {
+                        "consumer": {
+                          "displayName": "johnnyappleseed",
+                          "firstName": "Johnny",
+                          "lastName": "Appleseed",
+                          "verticalHandle": "consumer",
+                          "teamId": "abcdefghijklmnopqrstuvwxyz",
+                          "handle": "consumer-johnnyappleseed",
+                          "producerTermsUrl": "https://hilite.media/producer-terms",
+                          "supportContactEmail": "pat@ayo.co",
+                          "profilePhotoUrl": "https://cdn.hilite.media/profilePhotos/example.jpg",
+                          "social": {},
+                          "onboardingComplete": false,
+                          "stats": {
+                            "numberOfPendingTasks": 18,
+                            "numberOfFulfilledTasks": 0,
+                            "totalAmountRaised": 0
+                          },
+                          "supportContactPhoneNumber": "555-555-5555",
+                          "welcomePageUrl": "https://hilite.media/welcome-app",
+                          "isRemoved": false,
+                          "createdAt": "2016-11-15T00:26:44.194Z",
+                          "updatedAt": "2016-12-06T22:43:19.342Z",
+                          "id": "582a56445dd68501009c9186"
+                        }
+                      },
+                      "isRemoved": false,
+                      "iosDeviceTokens": [],
+                      "createdAt": "2016-11-15T00:26:44.194Z",
+                      "updatedAt": "2016-12-06T22:43:19.342Z",
+                      "id": "582a56445dd68501009c9186"
+                    },
+                    "producerId": "582a56445dd68501009c9186",
+                    "snapshotCharityIds": {},
+                    "isRemoved": false,
+                    "createdAt": "2016-12-08T19:42:16.074Z",
+                    "updatedAt": "2016-12-08T19:42:43.710Z",
+                    "brandedUrl": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/123/branded/example.mp4",
+                    "thumbnailUrl": "https://cdn.hilite.media/example.png",
+                    "prettyUrl": "https://hilite.media/2h8a8EG",
+                    "id": "5849b79883454e01002791f2"
+                  },
+                  {
+                    "url": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/example.mov",
+                    "taskId": "5849b53583454e01002791bb",
+                    "status": "pending curation",
+                    "producer": {
+                      "passports": [],
+                      "username": "johnnyappleseed",
+                      "email": "johnnyappleseed@hilite.media",
+                      "displayName": "Johnny Appleseed",
+                      "profiles": [],
+                      "producerProfile": {
+                        "consumer": {
+                          "displayName": "johnnyappleseed",
+                          "firstName": "Johnny",
+                          "lastName": "Appleseed",
+                          "verticalHandle": "consumer",
+                          "teamId": "abcdefghijklmnopqrstuvwxyz",
+                          "handle": "consumer-johnnyappleseed",
+                          "producerTermsUrl": "https://hilite.media/producer-terms",
+                          "supportContactEmail": "pat@ayo.co",
+                          "profilePhotoUrl": "https://cdn.hilite.media/profilePhotos/example.jpg",
+                          "social": {},
+                          "onboardingComplete": false,
+                          "stats": {
+                            "numberOfPendingTasks": 18,
+                            "numberOfFulfilledTasks": 0,
+                            "totalAmountRaised": 0
+                          },
+                          "supportContactPhoneNumber": "555-555-5555",
+                          "welcomePageUrl": "https://hilite.media/welcome-app",
+                          "isRemoved": false,
+                          "createdAt": "2016-11-15T00:26:44.194Z",
+                          "updatedAt": "2016-12-06T22:43:19.342Z",
+                          "id": "582a56445dd68501009c9186"
+                        }
+                      },
+                      "isRemoved": false,
+                      "iosDeviceTokens": [],
+                      "createdAt": "2016-11-15T00:26:44.194Z",
+                      "updatedAt": "2016-12-06T22:43:19.342Z",
+                      "id": "582a56445dd68501009c9186"
+                    },
+                    "producerId": "582a56445dd68501009c9186",
+                    "snapshotCharityIds": {},
+                    "isRemoved": false,
+                    "createdAt": "2016-12-08T19:42:16.074Z",
+                    "updatedAt": "2016-12-08T19:42:43.710Z",
+                    "brandedUrl": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/123/branded/example.mp4",
+                    "thumbnailUrl": "https://cdn.hilite.media/example.png",
+                    "prettyUrl": "https://hilite.media/2h8a8EG",
+                    "id": "5849b79883454e01002791f2"
+                  },
+                  {
+                    "url": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/example.mov",
+                    "taskId": "5849b53583454e01002791bb",
+                    "status": "pending curation",
+                    "producer": {
+                      "passports": [],
+                      "username": "johnnyappleseed",
+                      "email": "johnnyappleseed@hilite.media",
+                      "displayName": "Johnny Appleseed",
+                      "profiles": [],
+                      "producerProfile": {
+                        "consumer": {
+                          "displayName": "johnnyappleseed",
+                          "firstName": "Johnny",
+                          "lastName": "Appleseed",
+                          "verticalHandle": "consumer",
+                          "teamId": "abcdefghijklmnopqrstuvwxyz",
+                          "handle": "consumer-johnnyappleseed",
+                          "producerTermsUrl": "https://hilite.media/producer-terms",
+                          "supportContactEmail": "pat@ayo.co",
+                          "profilePhotoUrl": "https://cdn.hilite.media/profilePhotos/example.jpg",
+                          "social": {},
+                          "onboardingComplete": false,
+                          "stats": {
+                            "numberOfPendingTasks": 18,
+                            "numberOfFulfilledTasks": 0,
+                            "totalAmountRaised": 0
+                          },
+                          "supportContactPhoneNumber": "555-555-5555",
+                          "welcomePageUrl": "https://hilite.media/welcome-app",
+                          "isRemoved": false,
+                          "createdAt": "2016-11-15T00:26:44.194Z",
+                          "updatedAt": "2016-12-06T22:43:19.342Z",
+                          "id": "582a56445dd68501009c9186"
+                        }
+                      },
+                      "isRemoved": false,
+                      "iosDeviceTokens": [],
+                      "createdAt": "2016-11-15T00:26:44.194Z",
+                      "updatedAt": "2016-12-06T22:43:19.342Z",
+                      "id": "582a56445dd68501009c9186"
+                    },
+                    "producerId": "582a56445dd68501009c9186",
+                    "snapshotCharityIds": {},
+                    "isRemoved": false,
+                    "createdAt": "2016-12-08T19:42:16.074Z",
+                    "updatedAt": "2016-12-08T19:42:43.710Z",
+                    "brandedUrl": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/123/branded/example.mp4",
+                    "thumbnailUrl": "https://cdn.hilite.media/example.png",
+                    "prettyUrl": "https://hilite.media/2h8a8EG",
+                    "id": "5849b79883454e01002791f2"
+                  }
+                ]
+              }
+            }
+          ]
         }
       }
     }
