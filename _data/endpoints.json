@@ -1,303 +1,372 @@
 {
   "version": "0.05",
-  "campaigns": {
-    "title": "Campaigns",
-    "description": "Brands generate campaigns. This is usually done via our [admin console](https://admin.hilite.media) but, if you prefer to build your own, the routes to do so are listed below. Campaigns both send requests to users, and contain all submitted [deliverables](/deliverables.html) for that campaign.",
-    "endpoints": [
-      {
-        "title": "Create",
-        "description": "Creates a new campaign",
-        "method": "POST",
-        "url": "/v1/campaigns",
-        "params": [
-          {
-            "name": "uid",
-            "type": "string",
-            "isRequired": true,
-            "description": "name of the campaign (ex. _\"Super Bowl Victory Dance\"_)",
-            "exampleValue": "My Campaign Name"
-          },
-          {
-            "name": "teleprompter",
-            "type": "string",
-            "isRequired": true,
-            "description": "the text you wish to present to your users (ex. _\"Show us your best victory dance!\"_)",
-            "exampleValue": "This is some teleprompter text"
-          }
-        ],
-        "responseExample": {
-          "responseCode": 200,
-          "data": {
-            "campaign": {
-              "assetProfile": {},
-              "uid": "someuniqueid",
-              "teleprompter": "test teleprompter",
-              "organizationId": "584750c589b67e0700048cc9",
-              "status": "curated - approved",
-              "createdAt": "2016-12-06T23:59:02.127Z",
-              "updatedAt": "2016-12-06T23:59:02.127Z",
-              "id": "584750c689b67e0700048cd3",
-              "organization": {
-                "name": "My Organization Name",
-                "createdAt": "2016-12-06T23:59:01.430Z",
-                "updatedAt": "2016-12-06T23:59:01.430Z",
-                "id": "584750c589b67e0700048cc9"
-              }
-            }
-          }
+  "campaigns": [
+    {
+      "title": "Create",
+      "description": "Creates a new campaign",
+      "method": "POST",
+      "url": "/v1/campaigns",
+      "params": [
+        {
+          "name": "uid",
+          "type": "string",
+          "isRequired": true,
+          "description": "name of the campaign (ex. _\"Super Bowl Victory Dance\"_)",
+          "exampleValue": "My Campaign Name"
+        },
+        {
+          "name": "teleprompter",
+          "type": "string",
+          "isRequired": true,
+          "description": "the text you wish to present to your users (ex. _\"Show us your best victory dance!\"_)",
+          "exampleValue": "This is some teleprompter text"
         }
-      },
-      {
-        "title": "Find All",
-        "description": "Returns all campaigns for your organization.",
-        "method": "GET",
-        "url": "/v1/campaigns",
-        "responseExample": {
-          "responseCode": 200,
-          "data": {
-            "campaigns": [
-              {
-                "assetProfile": {},
-                "uid": "Campaign Name 1",
-                "teleprompter": "testing one",
-                "organizationId": "584753543748bc080054275d",
-                "status": "curated - approved",
-                "createdAt": "2016-12-07T00:09:56.903Z",
-                "updatedAt": "2016-12-07T00:09:56.903Z",
-                "id": "584753543748bc0800542762",
-                "organization": {
-                  "name": "My Organization Name",
-                  "createdAt": "2016-12-07T00:09:56.361Z",
-                  "updatedAt": "2016-12-07T00:09:56.361Z",
-                  "id": "584753543748bc080054275d"
-                }
-              },
-              {
-                "assetProfile": {},
-                "uid": "Campaign Name 2",
-                "teleprompter": "testing two",
-                "organizationId": "584753543748bc080054275d",
-                "status": "curated - approved",
-                "createdAt": "2016-12-07T00:09:56.906Z",
-                "updatedAt": "2016-12-07T00:09:56.907Z",
-                "id": "584753543748bc0800542763",
-                "organization": {
-                  "name": "My Organization Name",
-                  "createdAt": "2016-12-07T00:09:56.361Z",
-                  "updatedAt": "2016-12-07T00:09:56.361Z",
-                  "id": "584753543748bc080054275d"
-                }
-              },
-              {
-                "assetProfile": {},
-                "uid": "Campaign Name 3",
-                "teleprompter": "testing three",
-                "organizationId": "584753543748bc080054275d",
-                "status": "curated - approved",
-                "createdAt": "2016-12-07T00:09:56.909Z",
-                "updatedAt": "2016-12-07T00:09:56.909Z",
-                "id": "584753543748bc0800542764",
-                "organization": {
-                  "name": "My Organization Name",
-                  "createdAt": "2016-12-07T00:09:56.361Z",
-                  "updatedAt": "2016-12-07T00:09:56.361Z",
-                  "id": "584753543748bc080054275d"
-                }
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": "Find One",
-        "description": "Find one campaign by its ID",
-        "method": "GET",
-        "url": "/v1/campaigns/:id",
-        "responseExample": {
-          "responseCode": 200,
-          "data": {
-            "campaign": {
-              "assetProfile": {},
-              "uid": "My Campaign Name",
-              "teleprompter": "This is some teleprompter text",
-              "organizationId": "5848523a9e330308008dc295",
-              "status": "curated-approved",
-              "createdAt": "2016-12-06T23:59:02.127Z",
-              "updatedAt": "2016-12-06T23:59:02.127Z",
-              "id": "5848523b9e330308008dc298",
-              "organization": {
-                "name": "My Organization Name",
-                "createdAt": "2016-12-06T23:59:02.127Z",
-                "updatedAt": "2016-12-06T23:59:02.127Z",
-                "id": "5848523a9e330308008dc295"
-              }
-            }
-          }
-        }
-      },
-      {
-        "title": "Update",
-        "description": "Update an exisiting campaign",
-        "method": "PUT",
-        "url": "/v1/campaigns/:id",
-        "params": [
-          {
-            "name": "uid",
-            "type": "string",
-            "isRequired": false,
-            "description": "name of the campaign (ex. _\"Super Bowl Victory Dance\"_)",
-            "exampleValue": "My Campaign Name"
-          },
-          {
-            "name": "teleprompter",
-            "type": "string",
-            "isRequired": false,
-            "description": "the text you wish to present to your users (ex. _\"Show us your best victory dance!\"_)",
-            "exampleValue": "This is some updated teleprompter text"
-          },
-          {
-            "name": "preRoll",
-            "type": "string",
-            "isRequired": false,
-            "description": "Append a video pre roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.",
-            "exampleValue": "76124e30-7136-4211-b411-94ce7444e9eb"
-          },
-          {
-            "name": "postRoll",
-            "type": "string",
-            "isRequired": false,
-            "description": "Append a video post roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.",
-            "exampleValue": "76124e30-7136-4211-b411-94ce7444e9eb"
-          }
-        ]
-      },
-      {
-        "title": "Delete Pre Roll",
-        "description": "Remove pre roll from a campaign. For now will only affect newly uploaded videos (it wont remove pre roll from videos already uploaded) but that will be coming in a future release.",
-        "method": "DELETE",
-        "url": "/v1/campaigns/:id/preRoll",
-        "responseExample": {
-          "responseCode": 200,
-          "data": {
-            "campaign": {
-              "uid": "My Campaign Name",
-              "teleprompter": "This is some teleprompter text",
-              "organizationId": "584854990ea7cb08007d8b35",
-              "assetProfile": {
-                "postRoll": {
-                  "organizationId": "584854990ea7cb08007d8b35",
-                  "url": "http://someurl.mov",
-                  "mimeType": "video/mov",
-                  "createdAt": "2016-12-07T18:27:37.699Z",
-                  "updatedAt": "2016-12-07T18:27:37.699Z",
-                  "id": "584854990ea7cb08007d8b3b"
-                }
-              },
-              "status": "pending curation",
-              "createdAt": "2016-12-07T18:27:38.325Z",
-              "updatedAt": "2016-12-07T18:27:38.406Z",
-              "id": "5848549a0ea7cb08007d8b42",
-              "organization": {
-                "name": "My Organization Name",
-                "createdAt": "2016-12-07T18:27:37.373Z",
-                "updatedAt": "2016-12-07T18:27:37.373Z",
-                "id": "584854990ea7cb08007d8b35"
-              }
-            }
-          }
-        }
-      },
-      {
-        "title": "Delete Post Roll",
-        "description": "Remove post roll from a campaign. For now will only affect newly uploaded videos (it wont remove post roll from videos already uploaded) but that will be coming in a future release.",
-        "method": "DELETE",
-        "url": "/v1/campaigns/:id/postRoll",
-        "responseExample": {
-          "responseCode": 200,
-          "data": {
-            "campaign": {
-              "uid": "My Campaign Name",
-              "teleprompter": "This is some teleprompter text",
-              "organizationId": "584854990ea7cb08007d8b35",
-              "assetProfile": {
-                "preRoll": {
-                  "organizationId": "584854990ea7cb08007d8b35",
-                  "url": "http://someurl.mov",
-                  "mimeType": "video/mov",
-                  "createdAt": "2016-12-07T18:27:37.699Z",
-                  "updatedAt": "2016-12-07T18:27:37.699Z",
-                  "id": "584854990ea7cb08007d8b3b"
-                }
-              },
-              "status": "pending curation",
-              "createdAt": "2016-12-07T18:27:38.325Z",
-              "updatedAt": "2016-12-07T18:27:38.406Z",
-              "id": "5848549a0ea7cb08007d8b42",
-              "organization": {
-                "name": "My Organization Name",
-                "createdAt": "2016-12-07T18:27:37.373Z",
-                "updatedAt": "2016-12-07T18:27:37.373Z",
-                "id": "584854990ea7cb08007d8b35"
-              }
-            }
-          }
-        }
-      },
-      {
-        "title": "Delete",
-        "description": "Delete a campaign by its ID",
-        "method": "DELETE",
-        "url": "/v1/campaigns/:id",
-        "responseExample": {
-          "responseCode": 200,
-          "data": {
-            "campaign": {
-              "assetProfile": {},
-              "uid": "someuniqueid",
-              "teleprompter": "test teleprompter",
-              "organizationId": "584750c589b67e0700048cc9",
-              "status": "curated - approved",
-              "createdAt": "2016-12-06T23:59:02.127Z",
-              "updatedAt": "2016-12-06T23:59:02.127Z",
-              "id": "584750c689b67e0700048cd3",
-              "organization": {
-                "name": "My Organization Name",
-                "createdAt": "2016-12-06T23:59:01.430Z",
-                "updatedAt": "2016-12-06T23:59:01.430Z",
-                "id": "584750c589b67e0700048cc9"
-              }
+      ],
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "campaign": {
+            "assetProfile": {},
+            "uid": "someuniqueid",
+            "teleprompter": "test teleprompter",
+            "organizationId": "584750c589b67e0700048cc9",
+            "status": "curated - approved",
+            "createdAt": "2016-12-06T23:59:02.127Z",
+            "updatedAt": "2016-12-06T23:59:02.127Z",
+            "id": "584750c689b67e0700048cd3",
+            "organization": {
+              "name": "My Organization Name",
+              "createdAt": "2016-12-06T23:59:01.430Z",
+              "updatedAt": "2016-12-06T23:59:01.430Z",
+              "id": "584750c589b67e0700048cc9"
             }
           }
         }
       }
-    ]
-  },
-  "authentication": {
-    "title": "Authenticating a request",
-    "description": "All consumers of the HILITE api must be assigned a user account from the betacamp team. We plan to automate this process in the future via a developer console. Upon account creation a user is issued an api token. *All requests must include this token*. The expected format is `https://api.hilite.media/v2/route?token=<TOKEN>`. At present there is no expiration date on this token but it can be revoked by the betacamp team at any time.",
-    "endpoints": [
-      {
-        "title": "Token Retreival",
-        "description": "Returns an authorization token for use in subsequent requests. It is the responsibility of the client to store this token for later retrieval. For web based clients we suggest storing it in a cookie or local storage.",
-        "method": "POST",
-        "url": "/v1/authenticate",
-        "params": [
-          {
-            "name": "identifier",
-            "type": "string",
-            "isRequired": true,
-            "description": "Your username",
-            "exampleValue": "johnnyappleseed"
-          },
-          {
-            "name": "password",
-            "type": "string",
-            "isRequired": true,
-            "description": "Your password",
-            "exampleValue": "topsecretpassword"
-          }
-        ]
+    },
+    {
+      "title": "Find All",
+      "description": "Returns all campaigns for your organization.",
+      "method": "GET",
+      "url": "/v1/campaigns",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "campaigns": [
+            {
+              "assetProfile": {},
+              "uid": "Campaign Name 1",
+              "teleprompter": "testing one",
+              "organizationId": "584753543748bc080054275d",
+              "status": "curated - approved",
+              "createdAt": "2016-12-07T00:09:56.903Z",
+              "updatedAt": "2016-12-07T00:09:56.903Z",
+              "id": "584753543748bc0800542762",
+              "organization": {
+                "name": "My Organization Name",
+                "createdAt": "2016-12-07T00:09:56.361Z",
+                "updatedAt": "2016-12-07T00:09:56.361Z",
+                "id": "584753543748bc080054275d"
+              }
+            },
+            {
+              "assetProfile": {},
+              "uid": "Campaign Name 2",
+              "teleprompter": "testing two",
+              "organizationId": "584753543748bc080054275d",
+              "status": "curated - approved",
+              "createdAt": "2016-12-07T00:09:56.906Z",
+              "updatedAt": "2016-12-07T00:09:56.907Z",
+              "id": "584753543748bc0800542763",
+              "organization": {
+                "name": "My Organization Name",
+                "createdAt": "2016-12-07T00:09:56.361Z",
+                "updatedAt": "2016-12-07T00:09:56.361Z",
+                "id": "584753543748bc080054275d"
+              }
+            },
+            {
+              "assetProfile": {},
+              "uid": "Campaign Name 3",
+              "teleprompter": "testing three",
+              "organizationId": "584753543748bc080054275d",
+              "status": "curated - approved",
+              "createdAt": "2016-12-07T00:09:56.909Z",
+              "updatedAt": "2016-12-07T00:09:56.909Z",
+              "id": "584753543748bc0800542764",
+              "organization": {
+                "name": "My Organization Name",
+                "createdAt": "2016-12-07T00:09:56.361Z",
+                "updatedAt": "2016-12-07T00:09:56.361Z",
+                "id": "584753543748bc080054275d"
+              }
+            }
+          ]
+        }
       }
-    ]
-  }
+    },
+    {
+      "title": "Find One",
+      "description": "Find one campaign by its ID",
+      "method": "GET",
+      "url": "/v1/campaigns/:id",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "campaign": {
+            "assetProfile": {},
+            "uid": "My Campaign Name",
+            "teleprompter": "This is some teleprompter text",
+            "organizationId": "5848523a9e330308008dc295",
+            "status": "curated-approved",
+            "createdAt": "2016-12-06T23:59:02.127Z",
+            "updatedAt": "2016-12-06T23:59:02.127Z",
+            "id": "5848523b9e330308008dc298",
+            "organization": {
+              "name": "My Organization Name",
+              "createdAt": "2016-12-06T23:59:02.127Z",
+              "updatedAt": "2016-12-06T23:59:02.127Z",
+              "id": "5848523a9e330308008dc295"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Update",
+      "description": "Update an exisiting campaign",
+      "method": "PUT",
+      "url": "/v1/campaigns/:id",
+      "params": [
+        {
+          "name": "uid",
+          "type": "string",
+          "isRequired": false,
+          "description": "name of the campaign (ex. _\"Super Bowl Victory Dance\"_)",
+          "exampleValue": "My Campaign Name"
+        },
+        {
+          "name": "teleprompter",
+          "type": "string",
+          "isRequired": false,
+          "description": "the text you wish to present to your users (ex. _\"Show us your best victory dance!\"_)",
+          "exampleValue": "This is some updated teleprompter text"
+        },
+        {
+          "name": "preRoll",
+          "type": "string",
+          "isRequired": false,
+          "description": "Append a video pre roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.",
+          "exampleValue": "76124e30-7136-4211-b411-94ce7444e9eb"
+        },
+        {
+          "name": "postRoll",
+          "type": "string",
+          "isRequired": false,
+          "description": "Append a video post roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.",
+          "exampleValue": "76124e30-7136-4211-b411-94ce7444e9eb"
+        }
+      ]
+    },
+    {
+      "title": "Delete Pre Roll",
+      "description": "Remove pre roll from a campaign. For now will only affect newly uploaded videos (it wont remove pre roll from videos already uploaded) but that will be coming in a future release.",
+      "method": "DELETE",
+      "url": "/v1/campaigns/:id/preRoll",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "campaign": {
+            "uid": "My Campaign Name",
+            "teleprompter": "This is some teleprompter text",
+            "organizationId": "584854990ea7cb08007d8b35",
+            "assetProfile": {
+              "postRoll": {
+                "organizationId": "584854990ea7cb08007d8b35",
+                "url": "http://someurl.mov",
+                "mimeType": "video/mov",
+                "createdAt": "2016-12-07T18:27:37.699Z",
+                "updatedAt": "2016-12-07T18:27:37.699Z",
+                "id": "584854990ea7cb08007d8b3b"
+              }
+            },
+            "status": "pending curation",
+            "createdAt": "2016-12-07T18:27:38.325Z",
+            "updatedAt": "2016-12-07T18:27:38.406Z",
+            "id": "5848549a0ea7cb08007d8b42",
+            "organization": {
+              "name": "My Organization Name",
+              "createdAt": "2016-12-07T18:27:37.373Z",
+              "updatedAt": "2016-12-07T18:27:37.373Z",
+              "id": "584854990ea7cb08007d8b35"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Delete Post Roll",
+      "description": "Remove post roll from a campaign. For now will only affect newly uploaded videos (it wont remove post roll from videos already uploaded) but that will be coming in a future release.",
+      "method": "DELETE",
+      "url": "/v1/campaigns/:id/postRoll",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "campaign": {
+            "uid": "My Campaign Name",
+            "teleprompter": "This is some teleprompter text",
+            "organizationId": "584854990ea7cb08007d8b35",
+            "assetProfile": {
+              "preRoll": {
+                "organizationId": "584854990ea7cb08007d8b35",
+                "url": "http://someurl.mov",
+                "mimeType": "video/mov",
+                "createdAt": "2016-12-07T18:27:37.699Z",
+                "updatedAt": "2016-12-07T18:27:37.699Z",
+                "id": "584854990ea7cb08007d8b3b"
+              }
+            },
+            "status": "pending curation",
+            "createdAt": "2016-12-07T18:27:38.325Z",
+            "updatedAt": "2016-12-07T18:27:38.406Z",
+            "id": "5848549a0ea7cb08007d8b42",
+            "organization": {
+              "name": "My Organization Name",
+              "createdAt": "2016-12-07T18:27:37.373Z",
+              "updatedAt": "2016-12-07T18:27:37.373Z",
+              "id": "584854990ea7cb08007d8b35"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Delete",
+      "description": "Delete a campaign by its ID",
+      "method": "DELETE",
+      "url": "/v1/campaigns/:id",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "campaign": {
+            "assetProfile": {},
+            "uid": "someuniqueid",
+            "teleprompter": "test teleprompter",
+            "organizationId": "584750c589b67e0700048cc9",
+            "status": "curated - approved",
+            "createdAt": "2016-12-06T23:59:02.127Z",
+            "updatedAt": "2016-12-06T23:59:02.127Z",
+            "id": "584750c689b67e0700048cd3",
+            "organization": {
+              "name": "My Organization Name",
+              "createdAt": "2016-12-06T23:59:01.430Z",
+              "updatedAt": "2016-12-06T23:59:01.430Z",
+              "id": "584750c589b67e0700048cc9"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "authentication": [
+    {
+      "title": "Token Retreival",
+      "description": "Returns an authorization token for use in subsequent requests. It is the responsibility of the client to store this token for later retrieval. For web based clients we suggest storing it in a cookie or local storage.",
+      "method": "POST",
+      "url": "/v1/authenticate",
+      "params": [
+        {
+          "name": "identifier",
+          "type": "string",
+          "isRequired": true,
+          "description": "Your username",
+          "exampleValue": "johnnyappleseed"
+        },
+        {
+          "name": "password",
+          "type": "string",
+          "isRequired": true,
+          "description": "Your password",
+          "exampleValue": "topsecretpassword"
+        }
+      ],
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "token": "abcd-efgh-jklm-nopq-rstuv-wxyz"
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "title": "Find All",
+      "description": "Returns a list of all assets for your organization",
+      "method": "GET",
+      "url": "/v1/assets",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "assets": [
+            {
+              "organizationId": "5848a12908a0c20800fc0a18",
+              "url": "http://someurl.mov",
+              "mimeType": "video/mov",
+              "isRemoved": false,
+              "createdAt": "2016-12-07T23:54:17.895Z",
+              "updatedAt": "2016-12-07T23:54:17.895Z",
+              "id": "5848a12908a0c20800fc0a1e"
+            },
+            {
+              "organizationId": "5848a12908a0c20800fc0a18",
+              "url": "http://someurl.mov",
+              "mimeType": "video/mov",
+              "isRemoved": false,
+              "createdAt": "2016-12-07T23:54:17.896Z",
+              "updatedAt": "2016-12-07T23:54:17.896Z",
+              "id": "5848a12908a0c20800fc0a1f"
+            },
+            {
+              "organizationId": "5848a12908a0c20800fc0a18",
+              "url": "http://someurl.mov",
+              "mimeType": "video/mov",
+              "isRemoved": false,
+              "createdAt": "2016-12-07T23:54:17.897Z",
+              "updatedAt": "2016-12-07T23:54:17.897Z",
+              "id": "5848a12908a0c20800fc0a20"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Initiate Upload",
+      "description": "Returns a signed `PUT` URL for uploading your assets. _You cannot upload assets without first hitting this endpoint_.",
+      "method": "POST",
+      "url": "/v1/assets/initiateUpload",
+      "params": [
+        {
+          "name": "fileName",
+          "type": "string",
+          "isRequired": true,
+          "description": "Name of the file to upload. Please note that all additional path information will be stripped away.",
+          "exampleValue": "somefile.mov"  
+        },
+        {
+          "name": "mimeType",
+          "type": "string",
+          "isRequired": true,
+          "description": "the mimeType of the file you mean to upload",
+          "exampleValue": "video/quicktime"
+        }
+      ],
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "signed_request": "https://cdn.hilite.media/hilite/organizations/5848a31595be370700e39a62/assets/somefile.jpg?Content-Type=image%2Fjpeg&Expires=1481156790&Signature=NsFcwBNkiwDL6j3WGVCHAX8ymF8%3D&x-amz-acl=public-read",
+          "method": "PUT"
+        }
+      }
+    }
+  ]
 }
