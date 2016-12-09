@@ -422,162 +422,154 @@
               "data": {
                 "deliverables": [
                   {
-                    "url": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/example.mov",
-                    "taskId": "5849b53583454e01002791bb",
-                    "status": "pending curation",
+                    "url": "http://completed.url.com",
+                    "createdAt": "2016-12-09T21:32:11.934Z",
+                    "updatedAt": "2016-12-09T21:32:11.934Z",
+                    "id": "584b22db62858207000577cc",
                     "producer": {
-                      "passports": [],
-                      "username": "johnnyappleseed",
-                      "email": "johnnyappleseed@hilite.media",
-                      "displayName": "Johnny Appleseed",
-                      "profiles": [],
-                      "producerProfile": {
-                        "consumer": {
-                          "displayName": "johnnyappleseed",
-                          "firstName": "Johnny",
-                          "lastName": "Appleseed",
-                          "verticalHandle": "consumer",
-                          "teamId": "abcdefghijklmnopqrstuvwxyz",
-                          "handle": "consumer-johnnyappleseed",
-                          "producerTermsUrl": "https://hilite.media/producer-terms",
-                          "supportContactEmail": "pat@ayo.co",
-                          "profilePhotoUrl": "https://cdn.hilite.media/profilePhotos/example.jpg",
-                          "social": {},
-                          "onboardingComplete": false,
-                          "stats": {
-                            "numberOfPendingTasks": 18,
-                            "numberOfFulfilledTasks": 0,
-                            "totalAmountRaised": 0
-                          },
-                          "supportContactPhoneNumber": "555-555-5555",
-                          "welcomePageUrl": "https://hilite.media/welcome-app",
-                          "isRemoved": false,
-                          "createdAt": "2016-11-15T00:26:44.194Z",
-                          "updatedAt": "2016-12-06T22:43:19.342Z",
-                          "id": "582a56445dd68501009c9186"
+                      "producer": {
+                        "displayName": "A Display.Name",
+                        "email": "anEmail@email.com",
+                        "firstName": "John",
+                        "lastName": "Doe",
+                        "uid": "aThirdPartyUID",
+                        "data": {
+                          "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
                         }
-                      },
-                      "isRemoved": false,
-                      "iosDeviceTokens": [],
-                      "createdAt": "2016-11-15T00:26:44.194Z",
-                      "updatedAt": "2016-12-06T22:43:19.342Z",
-                      "id": "582a56445dd68501009c9186"
-                    },
-                    "producerId": "582a56445dd68501009c9186",
-                    "snapshotCharityIds": {},
-                    "isRemoved": false,
-                    "createdAt": "2016-12-08T19:42:16.074Z",
-                    "updatedAt": "2016-12-08T19:42:43.710Z",
-                    "brandedUrl": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/123/branded/example.mp4",
-                    "thumbnailUrl": "https://cdn.hilite.media/example.png",
-                    "prettyUrl": "https://hilite.media/2h8a8EG",
-                    "id": "5849b79883454e01002791f2"
+                      }
+                    }
                   },
                   {
-                    "url": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/example.mov",
-                    "taskId": "5849b53583454e01002791bb",
-                    "status": "pending curation",
+                    "url": "http://completed.url.com",
+                    "createdAt": "2016-12-09T21:32:11.934Z",
+                    "updatedAt": "2016-12-09T21:32:11.934Z",
+                    "id": "584b22db62858207000577cc",
                     "producer": {
-                      "passports": [],
-                      "username": "johnnyappleseed",
-                      "email": "johnnyappleseed@hilite.media",
-                      "displayName": "Johnny Appleseed",
-                      "profiles": [],
-                      "producerProfile": {
-                        "consumer": {
-                          "displayName": "johnnyappleseed",
-                          "firstName": "Johnny",
-                          "lastName": "Appleseed",
-                          "verticalHandle": "consumer",
-                          "teamId": "abcdefghijklmnopqrstuvwxyz",
-                          "handle": "consumer-johnnyappleseed",
-                          "producerTermsUrl": "https://hilite.media/producer-terms",
-                          "supportContactEmail": "pat@ayo.co",
-                          "profilePhotoUrl": "https://cdn.hilite.media/profilePhotos/example.jpg",
-                          "social": {},
-                          "onboardingComplete": false,
-                          "stats": {
-                            "numberOfPendingTasks": 18,
-                            "numberOfFulfilledTasks": 0,
-                            "totalAmountRaised": 0
-                          },
-                          "supportContactPhoneNumber": "555-555-5555",
-                          "welcomePageUrl": "https://hilite.media/welcome-app",
-                          "isRemoved": false,
-                          "createdAt": "2016-11-15T00:26:44.194Z",
-                          "updatedAt": "2016-12-06T22:43:19.342Z",
-                          "id": "582a56445dd68501009c9186"
+                      "producer": {
+                        "displayName": "A Display.Name",
+                        "email": "anEmail@email.com",
+                        "firstName": "John",
+                        "lastName": "Doe",
+                        "uid": "aThirdPartyUID",
+                        "data": {
+                          "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
                         }
-                      },
-                      "isRemoved": false,
-                      "iosDeviceTokens": [],
-                      "createdAt": "2016-11-15T00:26:44.194Z",
-                      "updatedAt": "2016-12-06T22:43:19.342Z",
-                      "id": "582a56445dd68501009c9186"
-                    },
-                    "producerId": "582a56445dd68501009c9186",
-                    "snapshotCharityIds": {},
-                    "isRemoved": false,
-                    "createdAt": "2016-12-08T19:42:16.074Z",
-                    "updatedAt": "2016-12-08T19:42:43.710Z",
-                    "brandedUrl": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/123/branded/example.mp4",
-                    "thumbnailUrl": "https://cdn.hilite.media/example.png",
-                    "prettyUrl": "https://hilite.media/2h8a8EG",
-                    "id": "5849b79883454e01002791f2"
+                      }
+                    }
                   },
                   {
-                    "url": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/example.mov",
-                    "taskId": "5849b53583454e01002791bb",
-                    "status": "pending curation",
+                    "url": "http://completed.url.com",
+                    "createdAt": "2016-12-09T21:32:11.934Z",
+                    "updatedAt": "2016-12-09T21:32:11.934Z",
+                    "id": "584b22db62858207000577cc",
                     "producer": {
-                      "passports": [],
-                      "username": "johnnyappleseed",
-                      "email": "johnnyappleseed@hilite.media",
-                      "displayName": "Johnny Appleseed",
-                      "profiles": [],
-                      "producerProfile": {
-                        "consumer": {
-                          "displayName": "johnnyappleseed",
-                          "firstName": "Johnny",
-                          "lastName": "Appleseed",
-                          "verticalHandle": "consumer",
-                          "teamId": "abcdefghijklmnopqrstuvwxyz",
-                          "handle": "consumer-johnnyappleseed",
-                          "producerTermsUrl": "https://hilite.media/producer-terms",
-                          "supportContactEmail": "pat@ayo.co",
-                          "profilePhotoUrl": "https://cdn.hilite.media/profilePhotos/example.jpg",
-                          "social": {},
-                          "onboardingComplete": false,
-                          "stats": {
-                            "numberOfPendingTasks": 18,
-                            "numberOfFulfilledTasks": 0,
-                            "totalAmountRaised": 0
-                          },
-                          "supportContactPhoneNumber": "555-555-5555",
-                          "welcomePageUrl": "https://hilite.media/welcome-app",
-                          "isRemoved": false,
-                          "createdAt": "2016-11-15T00:26:44.194Z",
-                          "updatedAt": "2016-12-06T22:43:19.342Z",
-                          "id": "582a56445dd68501009c9186"
+                      "producer": {
+                        "displayName": "A Display.Name",
+                        "email": "anEmail@email.com",
+                        "firstName": "John",
+                        "lastName": "Doe",
+                        "uid": "aThirdPartyUID",
+                        "data": {
+                          "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
                         }
-                      },
-                      "isRemoved": false,
-                      "iosDeviceTokens": [],
-                      "createdAt": "2016-11-15T00:26:44.194Z",
-                      "updatedAt": "2016-12-06T22:43:19.342Z",
-                      "id": "582a56445dd68501009c9186"
-                    },
-                    "producerId": "582a56445dd68501009c9186",
-                    "snapshotCharityIds": {},
-                    "isRemoved": false,
-                    "createdAt": "2016-12-08T19:42:16.074Z",
-                    "updatedAt": "2016-12-08T19:42:43.710Z",
-                    "brandedUrl": "https://cdn.hilite.media/hilite/organizations/abc/campaigns/123/branded/example.mp4",
-                    "thumbnailUrl": "https://cdn.hilite.media/example.png",
-                    "prettyUrl": "https://hilite.media/2h8a8EG",
-                    "id": "5849b79883454e01002791f2"
+                      }
+                    }
                   }
                 ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Find One",
+      "description": "Find one deliverable by its id",
+      "method": "GET",
+      "url": "/v1/deliverables/:id",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "url": "http://completed.url.com",
+          "createdAt": "2016-12-09T21:32:11.934Z",
+          "updatedAt": "2016-12-09T21:32:11.934Z",
+          "id": "584b22db62858207000577cc",
+          "producer": {
+            "producer": {
+              "displayName": "A Display.Name",
+              "email": "anEmail@email.com",
+              "firstName": "John",
+              "lastName": "Doe",
+              "uid": "aThirdPartyUID",
+              "data": {
+                "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Find all for campaign",
+      "description": "Finds all deliverables associated with a campaign",
+      "method": "GET",
+      "url": "/v1/campaigns/:id/deliverables",      
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "deliverables": [
+            {
+              "url": "http://completed.url.com",
+              "createdAt": "2016-12-09T21:32:11.934Z",
+              "updatedAt": "2016-12-09T21:32:11.934Z",
+              "id": "584b22db62858207000577cc",
+              "producer": {
+                "producer": {
+                  "displayName": "A Display.Name",
+                  "email": "anEmail@email.com",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "uid": "aThirdPartyUID",
+                  "data": {
+                    "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
+                  }
+                }
+              }
+            },
+            {
+              "url": "http://completed.url.com",
+              "createdAt": "2016-12-09T21:32:11.934Z",
+              "updatedAt": "2016-12-09T21:32:11.934Z",
+              "id": "584b22db62858207000577cc",
+              "producer": {
+                "producer": {
+                  "displayName": "A Display.Name",
+                  "email": "anEmail@email.com",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "uid": "aThirdPartyUID",
+                  "data": {
+                    "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
+                  }
+                }
+              }
+            },
+            {
+              "url": "http://completed.url.com",
+              "createdAt": "2016-12-09T21:32:11.934Z",
+              "updatedAt": "2016-12-09T21:32:11.934Z",
+              "id": "584b22db62858207000577cc",
+              "producer": {
+                "producer": {
+                  "displayName": "A Display.Name",
+                  "email": "anEmail@email.com",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "uid": "aThirdPartyUID",
+                  "data": {
+                    "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
+                  }
+                }
               }
             }
           ]
