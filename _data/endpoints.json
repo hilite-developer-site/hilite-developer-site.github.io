@@ -513,7 +513,7 @@
       "title": "Find all for campaign",
       "description": "Finds all deliverables associated with a campaign",
       "method": "GET",
-      "url": "/v1/campaigns/:id/deliverables",      
+      "url": "/v1/campaigns/:id/deliverables",
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -571,6 +571,117 @@
                   }
                 }
               }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "webhooks": [
+    {
+      "title": "Find all",
+      "description": "Returns an array of available Webhooks. If one or more have been defined, they will be included.",
+      "method": "GET",
+      "url": "/v1/webhooks",
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "webHooks": [
+            {
+              "displayName": "On Video Submitted",
+              "description": "This hook fires when a new video is uploaded to one of your campaigns.",
+              "webHookHandle": "ON_VIDEO_SUBMITTED",
+              "organizationId": "abcdefghijklmnopqrstuvwxyz",
+              "url": "https://example.com",
+              "id": "abcdefghijklmnopqrstuvwxyz",
+              "createdAt": "2016-12-06T06:07:19.999Z",
+              "updatedAt": "2016-12-06T06:07:19.999Z"
+            },
+            {
+              "displayName": "On Video Approved",
+              "description": "This hook fires when an uploaded video has been approved by a curator.",
+              "webHookHandle": "ON_VIDEO_APPROVED",
+              "organizationId": null,
+              "url": null,
+              "id": null,
+              "createdAt": null,
+              "updatedAt": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Create or update",
+      "description": "Creates a new webhook if non of that type exist. Updates the existing otherwise.",
+      "method": "POST",
+      "url": "/v1/webhooks",
+      "params": [
+        {
+          "name": "webHookHandle",
+          "type": "string",
+          "isRequired": true,
+          "description": "Webhook handles are the ID of the webhook you mean to use. You can find this field by viewing the response of the `Find all` endpoint (see above). Returns the updated list of webhooks on success.",
+          "exampleValue": "ON_VIDEO_SUBMITTED"
+        }
+      ],
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "webHooks": [
+            {
+              "displayName": "On Video Submitted",
+              "description": "This hook fires when a new video is uploaded to one of your campaigns.",
+              "webHookHandle": "ON_VIDEO_SUBMITTED",
+              "organizationId": "abcdefghijklmnopqrstuvwxyz",
+              "url": "https://example.com",
+              "id": "abcdefghijklmnopqrstuvwxyz",
+              "createdAt": "2016-12-06T06:07:19.999Z",
+              "updatedAt": "2016-12-06T06:07:19.999Z"
+            },
+            {
+              "displayName": "On Video Approved",
+              "description": "This hook fires when an uploaded video has been approved by a curator.",
+              "webHookHandle": "ON_VIDEO_APPROVED",
+              "organizationId": null,
+              "url": null,
+              "id": null,
+              "createdAt": null,
+              "updatedAt": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Delete",
+      "description": "Remove a webhook. Returns the updated list of webhooks on success.",
+      "method": "DELETE",
+      "url": "/v1/webhooks/:id",
+      "params": [],
+      "responseExample": {
+        "responseCode": 200,
+        "data": {
+          "webHooks": [
+            {
+              "displayName": "On Video Submitted",
+              "description": "This hook fires when a new video is uploaded to one of your campaigns.",
+              "webHookHandle": "ON_VIDEO_SUBMITTED",
+              "organizationId": "abcdefghijklmnopqrstuvwxyz",
+              "url": "https://example.com",
+              "id": "abcdefghijklmnopqrstuvwxyz",
+              "createdAt": "2016-12-06T06:07:19.999Z",
+              "updatedAt": "2016-12-06T06:07:19.999Z"
+            },
+            {
+              "displayName": "On Video Approved",
+              "description": "This hook fires when an uploaded video has been approved by a curator.",
+              "webHookHandle": "ON_VIDEO_APPROVED",
+              "organizationId": null,
+              "url": null,
+              "id": null,
+              "createdAt": null,
+              "updatedAt": null
             }
           ]
         }
