@@ -6,6 +6,10 @@
       "description": "Creates a new campaign",
       "method": "POST",
       "url": "/v1/campaigns",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "params": [
         {
           "name": "uid",
@@ -49,6 +53,10 @@
       "description": "Returns all campaigns for your organization.",
       "method": "GET",
       "url": "/v1/campaigns",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -110,6 +118,10 @@
       "description": "Find one campaign by its ID",
       "method": "GET",
       "url": "/v1/campaigns/:id",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -137,6 +149,10 @@
       "description": "Update an exisiting campaign",
       "method": "PUT",
       "url": "/v1/campaigns/:id",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "params": [
         {
           "name": "uid",
@@ -211,6 +227,10 @@
       "description": "Remove pre roll from a campaign. For now will only affect newly uploaded videos (it wont remove pre roll from videos already uploaded) but that will be coming in a future release.",
       "method": "DELETE",
       "url": "/v1/campaigns/:id/preRoll",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -247,6 +267,10 @@
       "description": "Remove post roll from a campaign. For now will only affect newly uploaded videos (it wont remove post roll from videos already uploaded) but that will be coming in a future release.",
       "method": "DELETE",
       "url": "/v1/campaigns/:id/postRoll",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -283,6 +307,10 @@
       "description": "Delete a campaign by its ID",
       "method": "DELETE",
       "url": "/v1/campaigns/:id",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -312,6 +340,10 @@
       "description": "Returns an authorization token for use in subsequent requests. It is the responsibility of the client to store this token for later retrieval. For web based clients we suggest storing it in a cookie or local storage.",
       "method": "POST",
       "url": "/v1/authenticate",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "params": [
         {
           "name": "identifier",
@@ -342,6 +374,10 @@
       "description": "Returns a list of all assets for your organization",
       "method": "GET",
       "url": "/v1/assets",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -382,6 +418,10 @@
       "description": "Returns a signed `PUT` URL for uploading your assets. _You cannot upload assets without first hitting this endpoint_.",
       "method": "POST",
       "url": "/v1/assets/initiateUpload",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "params": [
         {
           "name": "fileName",
@@ -413,6 +453,10 @@
       "description": "Return all deliverables for your organization",
       "method": "GET",
       "url": "/v1/deliverables",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -487,6 +531,10 @@
       "description": "Find one deliverable by its id",
       "method": "GET",
       "url": "/v1/deliverables/:id",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -514,6 +562,10 @@
       "description": "Finds all deliverables associated with a campaign",
       "method": "GET",
       "url": "/v1/campaigns/:id/deliverables",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -575,6 +627,46 @@
           ]
         }
       }
+    },
+    {
+      "title": "Upload",
+      "description": "Upload a deliverable for a campaign.",
+      "method": "POST",
+      "url": "/v1/campaigns/:id/deliverable/upload",
+      "headers": {
+        "contentType": "multipart/form-data",
+        "additionalHeaders": []
+      },
+      "params": [
+        {
+          "name": "deliverable",
+          "type": "file",
+          "isRequired": true,
+          "description": "the file you mean to upload",
+          "exampleValue": "@/path/to/your/file.mov"
+        },
+        {
+          "name": "producer",
+          "type": "json",
+          "isRequired": false,
+          "description": "Information about the person uploading the deliverable. Invalid, malformed JSON will be ignored.",
+          "exampleValue": {
+            "uid": "aThirdPartyUID",
+            "email": "anEmail@email.com",
+            "displayName": "A Display.Name",
+            "firstName": "John",
+            "lastName": "Doe",
+            "socialHandles": [],
+            "data": {
+              "someField": "someValue"
+            }
+          }
+        }
+      ],
+      "responseExample": {
+        "responseCode": 200,
+        "data": {}
+      }
     }
   ],
   "webhooks": [
@@ -583,6 +675,10 @@
       "description": "Returns an array of available Webhooks. If one or more have been defined, they will be included.",
       "method": "GET",
       "url": "/v1/webhooks",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "responseExample": {
         "responseCode": 200,
         "data": {
@@ -616,6 +712,10 @@
       "description": "Creates a new webhook if non of that type exist. Updates the existing otherwise.",
       "method": "POST",
       "url": "/v1/webhooks",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "params": [
         {
           "name": "webHookHandle",
@@ -658,6 +758,10 @@
       "description": "Remove a webhook. Returns the updated list of webhooks on success.",
       "method": "DELETE",
       "url": "/v1/webhooks/:id",
+      "headers": {
+        "contentType": "application/json",
+        "additionalHeaders": []
+      },
       "params": [],
       "responseExample": {
         "responseCode": 200,
