@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Authentication
+category: endpoint
 ---
 
 ## Authenticating a request

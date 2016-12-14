@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Producers
+category: endpoint
 ---
 
 ## Producers

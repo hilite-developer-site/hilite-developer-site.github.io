@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Deliverables
+category: endpoint
 ---
 
 ## Deliverables

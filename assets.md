@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: comingsoon
 title: Assets
+category: endpoint
 ---
 
 ## Assets

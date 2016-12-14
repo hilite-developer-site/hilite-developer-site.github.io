@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Webhooks
+category: endpoint
 ---
 
 Webhooks allow external services to be notified when certain events happen within the HILITE system that affect your organization (example: a new video gets uploaded for a campaign). When the specified events happen, we’ll send a POST request to each of the URLs you provide.
