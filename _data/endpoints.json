@@ -643,7 +643,7 @@
           "type": "file",
           "isRequired": true,
           "description": "the file you mean to upload",
-          "exampleValue": "@/path/to/your/file.mov"
+          "exampleValue": "/path/to/your/file.mov"
         },
         {
           "name": "producer",
