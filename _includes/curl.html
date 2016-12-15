@@ -1,20 +1,53 @@
-{% if include.data %}
-    
-    {% assign params =  '{' %}
-    {% for param in include.data %}        
-        {% assign params = params  | append: '"' | append: param.name  | append: '"' %}
-        {% assign params = params | append: " : " %}
-        {% assign params = params  | append: '"' | append: param.exampleValue  | append: '"' %}        
-        {% if forloop.last == false %} 
-        {% assign params = params | append: ', ' %}
-        {% endif %}
-    {% endfor %}
-    {% assign params =  params | append: '}' %}
+{% comment %} build our headers {%endcomment%}
+{% assign headers = '-H "Content-Type: ' | append: include.endpoint.headers.contentType | append: '"'%}
+{% for header in include.endpoint.headers.additionalHeaders %}    
+    {% assign headers = headers | append: ' ' | append: '-H "' | append: header | append: '"'%}
+{% endfor %}
 
-<pre class="terminal"><code>$ curl -X {{ include.method }} -H "Content-Type: application/json" -d '{{ params }}' "{{ include.url | prepend: site.api_host | replace: ':id', '584753543748bc0800542762' }}?token=76124e30-7136-4211-b411-94ce7444e9eb"</code></pre>    
-{% else %}
-<pre class="terminal"><code>$ curl{% if include.method %} -X {{ include.method }} {% endif %} "{{ include.url | prepend: site.api_host  | replace: ':id', '584753543748bc0800542762' }}?token=76124e30-7136-4211-b411-94ce7444e9eb"</code></pre>
+
+{% comment %} build our request body {%endcomment%}
+{% assign params = '' %}
+{% if include.endpoint.params %}    
+    {% if include.endpoint.headers.contentType == 'multipart/form-data' %}
+
+        {% for param in include.endpoint.params %}
+            {% assign params = params | append: '-F ' %}            
+            {% if param.type == 'file' %}
+                {% assign params = params | append: param.name | append: "=@" | append: param.exampleValue %}
+            {% elsif param.type == 'json' %}                
+                {% assign json = param.exampleValue | jsonify | replace: ',', '%2C' %}
+                {% assign params = params | append: param.name | append: "=" | append: json %}
+            {% else %}
+                {% assign params = params | append: param.name | append: "=" | append: param.exampleValue %}
+            {% endif %}            
+        {% endfor %}
+
+    {% else %}
+        {% assign params =  "-d '{" %}
+        {% for param in include.endpoint.params %}        
+            {% assign params = params  | append: '"' | append: param.name  | append: '"' %}
+            {% assign params = params | append: " : " %}
+            {% assign params = params  | append: '"' | append: param.exampleValue  | append: '"' %}        
+            {% if forloop.last == false %} 
+            {% assign params = params | append: ', ' %}
+            {% endif %}
+        {% endfor %}
+        {% assign params =  params | append: "}'" %}    
+    {% endif %}
 {% endif %}
+
+{% comment %} get the HTTP verb {%endcomment%}
+{% assign method = include.endpoint.method %}
+
+{% comment %} build the URL {%endcomment%}
+{% assign url = '"' %}
+{% assign url = url | append: site.api_host %}
+{% assign url = url | append: include.endpoint.url %}
+{% assign url = url | replace: ':id', '584753543748bc0800542762' %}
+{% assign url = url | append: '?token=76124e30-7136-4211-b411-94ce7444e9eb' %}
+{% assign url = url | append: '"' %}
+
+<pre class="terminal"><code>$ curl -X {{ method }} {{ headers }} {{ params }} {{ url }}</code></pre>    
 
 _remember to user your own token_
 
