@@ -11,7 +11,7 @@
 **Params**    
 
 {% for param in endpoint.params %}
-`{{ param.name }} :: {{ param.type }}{% if(param.isRequired) %} (required){% endif %}` {{ param.description }}`
+`{{ param.name }} :: {{ param.type }}{% if(param.isRequired) %} (required){% endif %}` {{ param.description }}
 {% endfor %}
 
 
