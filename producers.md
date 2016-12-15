@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: comingsoon
 title: Producers
 category: endpoint
 ---
