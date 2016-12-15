@@ -655,8 +655,7 @@
             "email": "anEmail@email.com",
             "displayName": "A Display.Name",
             "firstName": "John",
-            "lastName": "Doe",
-            "socialHandles": [],
+            "lastName": "Doe",            
             "data": {
               "someField": "someValue"
             }
@@ -665,7 +664,27 @@
       ],
       "responseExample": {
         "responseCode": 200,
-        "data": {}
+        "data": {
+          "deliverable": {
+            "url": "https://cdn-staging.hilite.media/hilite/organizations/123/campaigns/123/afile.mov",
+            "brandedUrl": "https://cdn-staging.hilite.media/hilite/organizations/123/campaigns/123/branded/afile.mov",
+            "thumbnailUrl": "https://cdn-staging.hilite.media/hilite/organizations/123/campaigns/123/afile.jpg",
+            "createdAt": "2016-12-14T22:36:49.538Z",
+            "updatedAt": "2016-12-14T22:36:49.538Z",
+            "id": "5851c98101c8f40100c8581z",
+            "campaignId": "584ef3a30352370100f78180",
+            "producer": {
+              "uid": "aThirdPartyUID",
+              "email": "anEmail@email.com",
+              "displayName": "A Display.Name",
+              "firstName": "John",
+              "lastName": "Doe",              
+              "data": {
+                "someField": "someValue"
+              }
+            }
+          }
+        }
       }
     }
   ],
