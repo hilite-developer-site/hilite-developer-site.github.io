@@ -29,8 +29,7 @@
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {
-            "assetProfile": {},
+          "campaign": {            
             "uid": "someuniqueid",
             "teleprompter": "test teleprompter",
             "organizationId": "584750c589b67e0700048cc9",
@@ -61,8 +60,7 @@
         "responseCode": 200,
         "data": {
           "campaigns": [
-            {
-              "assetProfile": {},
+            {              
               "uid": "Campaign Name 1",
               "teleprompter": "testing one",
               "organizationId": "584753543748bc080054275d",
@@ -77,8 +75,7 @@
                 "id": "584753543748bc080054275d"
               }
             },
-            {
-              "assetProfile": {},
+            {              
               "uid": "Campaign Name 2",
               "teleprompter": "testing two",
               "organizationId": "584753543748bc080054275d",
@@ -93,8 +90,7 @@
                 "id": "584753543748bc080054275d"
               }
             },
-            {
-              "assetProfile": {},
+            {              
               "uid": "Campaign Name 3",
               "teleprompter": "testing three",
               "organizationId": "584753543748bc080054275d",
@@ -125,8 +121,7 @@
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {
-            "assetProfile": {},
+          "campaign": {            
             "uid": "My Campaign Name",
             "teleprompter": "This is some teleprompter text",
             "organizationId": "5848523a9e330308008dc295",
@@ -167,44 +162,12 @@
           "isRequired": false,
           "description": "the text you wish to present to your users (ex. _\"Show us your best victory dance!\"_)",
           "exampleValue": "This is some updated teleprompter text"
-        },
-        {
-          "name": "preRoll",
-          "type": "string",
-          "isRequired": false,
-          "description": "Append a video pre roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.",
-          "exampleValue": "76124e30-7136-4211-b411-94ce7444e9eb"
-        },
-        {
-          "name": "postRoll",
-          "type": "string",
-          "isRequired": false,
-          "description": "Append a video post roll to uploaded [deliverables](/deliverables.html). Must be a valid asset id and in a valid file format (currently video/mp4, video/quicktime, video/mov, video/ogg). See our [assets](/assets.html) section for more information on how to create an asset.",
-          "exampleValue": "76124e30-7136-4211-b411-94ce7444e9eb"
         }
       ],
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {
-            "assetProfile": {
-              "postRoll": {
-                "organizationId": "584854990ea7cb08007d8b35",
-                "url": "http://someurl.mov",
-                "mimeType": "video/mov",
-                "createdAt": "2016-12-07T18:27:37.699Z",
-                "updatedAt": "2016-12-07T18:27:37.699Z",
-                "id": "584854990ea7cb08007d8b3b"
-              },
-              "preRoll": {
-                "organizationId": "584854990ea7cb08007d8b35",
-                "url": "http://someurl.mov",
-                "mimeType": "video/mov",
-                "createdAt": "2016-12-07T18:27:37.699Z",
-                "updatedAt": "2016-12-07T18:27:37.699Z",
-                "id": "584854990ea7cb08007d8b3b"
-              }
-            },
+          "campaign": {            
             "uid": "My Campaign Name",
             "teleprompter": "This is some updated teleprompter text",
             "organizationId": "584750c589b67e0700048cc9",
@@ -221,87 +184,7 @@
           }
         }
       }
-    },
-    {
-      "title": "Delete Pre Roll",
-      "description": "Remove pre roll from a campaign. For now will only affect newly uploaded videos (it wont remove pre roll from videos already uploaded) but that will be coming in a future release.",
-      "method": "DELETE",
-      "url": "/v1/campaigns/:id/preRoll",
-      "headers": {
-        "contentType": "application/json",
-        "additionalHeaders": []
-      },
-      "responseExample": {
-        "responseCode": 200,
-        "data": {
-          "campaign": {
-            "uid": "My Campaign Name",
-            "teleprompter": "This is some teleprompter text",
-            "organizationId": "584854990ea7cb08007d8b35",
-            "assetProfile": {
-              "postRoll": {
-                "organizationId": "584854990ea7cb08007d8b35",
-                "url": "http://someurl.mov",
-                "mimeType": "video/mov",
-                "createdAt": "2016-12-07T18:27:37.699Z",
-                "updatedAt": "2016-12-07T18:27:37.699Z",
-                "id": "584854990ea7cb08007d8b3b"
-              }
-            },
-            "status": "pending curation",
-            "createdAt": "2016-12-07T18:27:38.325Z",
-            "updatedAt": "2016-12-07T18:27:38.406Z",
-            "id": "5848549a0ea7cb08007d8b42",
-            "organization": {
-              "name": "My Organization Name",
-              "createdAt": "2016-12-07T18:27:37.373Z",
-              "updatedAt": "2016-12-07T18:27:37.373Z",
-              "id": "584854990ea7cb08007d8b35"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Delete Post Roll",
-      "description": "Remove post roll from a campaign. For now will only affect newly uploaded videos (it wont remove post roll from videos already uploaded) but that will be coming in a future release.",
-      "method": "DELETE",
-      "url": "/v1/campaigns/:id/postRoll",
-      "headers": {
-        "contentType": "application/json",
-        "additionalHeaders": []
-      },
-      "responseExample": {
-        "responseCode": 200,
-        "data": {
-          "campaign": {
-            "uid": "My Campaign Name",
-            "teleprompter": "This is some teleprompter text",
-            "organizationId": "584854990ea7cb08007d8b35",
-            "assetProfile": {
-              "preRoll": {
-                "organizationId": "584854990ea7cb08007d8b35",
-                "url": "http://someurl.mov",
-                "mimeType": "video/mov",
-                "createdAt": "2016-12-07T18:27:37.699Z",
-                "updatedAt": "2016-12-07T18:27:37.699Z",
-                "id": "584854990ea7cb08007d8b3b"
-              }
-            },
-            "status": "pending curation",
-            "createdAt": "2016-12-07T18:27:38.325Z",
-            "updatedAt": "2016-12-07T18:27:38.406Z",
-            "id": "5848549a0ea7cb08007d8b42",
-            "organization": {
-              "name": "My Organization Name",
-              "createdAt": "2016-12-07T18:27:37.373Z",
-              "updatedAt": "2016-12-07T18:27:37.373Z",
-              "id": "584854990ea7cb08007d8b35"
-            }
-          }
-        }
-      }
-    },
+    },    
     {
       "title": "Delete",
       "description": "Delete a campaign by its ID",
@@ -314,8 +197,7 @@
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {
-            "assetProfile": {},
+          "campaign": {            
             "uid": "someuniqueid",
             "teleprompter": "test teleprompter",
             "organizationId": "584750c589b67e0700048cc9",
