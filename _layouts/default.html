@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
 
+  
+
+  <div class="container">
     {% include header.html %}
+      <div class="row">
+        <div class="col-sm-3">
+          <ul>
+            {% for page in site.pages %} {% if page.title %}
+            <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+            {% endif %} {% endfor %}
+          </ul>
+        </div>
+        <div class="col-sm-9">
+          {{ content }}
+        </div>
+      </div>          
+  </div>
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+  {% include footer.html %}
 
-    {% include footer.html %}
-
-  </body>
+</body>
 
 </html>
