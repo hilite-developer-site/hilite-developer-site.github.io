@@ -44,7 +44,9 @@
 {% assign url = url | append: site.api_host %}
 {% assign url = url | append: include.endpoint.url %}
 {% assign url = url | replace: ':id', '584753543748bc0800542762' %}
-{% assign url = url | append: '?token=76124e30-7136-4211-b411-94ce7444e9eb' %}
+{% if include.endpoint.isAuthenticated %}
+    {% assign url = url | append: '?token=76124e30-7136-4211-b411-94ce7444e9eb' %}
+{% endif %}
 {% assign url = url | append: '"' %}
 
 <pre class="terminal"><code>$ curl -X {{ method }} {{ headers }} {{ params }} {{ url }}</code></pre>    

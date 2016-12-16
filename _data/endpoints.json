@@ -6,6 +6,7 @@
       "description": "Creates a new campaign",
       "method": "POST",
       "url": "/v1/campaigns",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -52,6 +53,7 @@
       "description": "Returns all campaigns for your organization.",
       "method": "GET",
       "url": "/v1/campaigns",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -114,6 +116,7 @@
       "description": "Find one campaign by its ID",
       "method": "GET",
       "url": "/v1/campaigns/:id",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -144,6 +147,7 @@
       "description": "Update an exisiting campaign",
       "method": "PUT",
       "url": "/v1/campaigns/:id",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -190,6 +194,7 @@
       "description": "Delete a campaign by its ID",
       "method": "DELETE",
       "url": "/v1/campaigns/:id",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -222,6 +227,7 @@
       "description": "Returns an authorization token for use in subsequent requests. It is the responsibility of the client to store this token for later retrieval. For web based clients we suggest storing it in a cookie or local storage.",
       "method": "POST",
       "url": "/v1/authenticate",
+      "isAuthenticated": false,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -256,6 +262,7 @@
       "description": "Returns a list of all assets for your organization",
       "method": "GET",
       "url": "/v1/assets",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -300,6 +307,7 @@
       "description": "Returns a signed `PUT` URL for uploading your assets. _You cannot upload assets without first hitting this endpoint_.",
       "method": "POST",
       "url": "/v1/assets/initiateUpload",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -335,6 +343,7 @@
       "description": "Return all deliverables for your organization",
       "method": "GET",
       "url": "/v1/deliverables",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -413,6 +422,7 @@
       "description": "Find one deliverable by its id",
       "method": "GET",
       "url": "/v1/deliverables/:id",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -444,6 +454,7 @@
       "description": "Finds all deliverables associated with a campaign",
       "method": "GET",
       "url": "/v1/campaigns/:id/deliverables",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -515,6 +526,7 @@
       "description": "Upload a deliverable for a campaign.",
       "method": "POST",
       "url": "/v1/campaigns/:id/deliverable/upload",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "multipart/form-data",
         "additionalHeaders": []
@@ -576,6 +588,7 @@
       "description": "Returns an array of available Webhooks. If one or more have been defined, they will be included.",
       "method": "GET",
       "url": "/v1/webhooks",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -613,6 +626,7 @@
       "description": "Creates a new webhook if non of that type exist. Updates the existing otherwise.",
       "method": "POST",
       "url": "/v1/webhooks",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -659,6 +673,7 @@
       "description": "Remove a webhook. Returns the updated list of webhooks on success.",
       "method": "DELETE",
       "url": "/v1/webhooks/:id",
+      "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []

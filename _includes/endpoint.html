@@ -6,7 +6,7 @@
 
 **Method**: `{{ endpoint.method }}`
 
-**URL**: `{{ endpoint.url }}?token=<TOKEN>`
+**URL**: `{{ endpoint.url }}{% if endpoint.isAuthenticated %}?token=<TOKEN>{%endif%}`
 
 **Params**    
 
