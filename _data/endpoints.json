@@ -25,7 +25,14 @@
           "isRequired": true,
           "description": "the text you wish to present to your users (ex. _\"Show us your best victory dance!\"_)",
           "exampleValue": "This is some teleprompter text"
-        }
+        },
+        {
+          "name": "isPublic",
+          "type": "boolean",
+          "isRequired": false,
+          "description": "Defaults to false. Setting this to true publishes your campaign to public feeds such as the HILITE app.",
+          "exampleValue": true
+        }        
       ],
       "responseExample": {
         "responseCode": 200,
@@ -38,6 +45,7 @@
             "createdAt": "2016-12-06T23:59:02.127Z",
             "updatedAt": "2016-12-06T23:59:02.127Z",
             "id": "584750c689b67e0700048cd3",
+            "isPublic": true,
             "organization": {
               "name": "My Organization Name",
               "createdAt": "2016-12-06T23:59:01.430Z",
@@ -70,6 +78,7 @@
               "createdAt": "2016-12-07T00:09:56.903Z",
               "updatedAt": "2016-12-07T00:09:56.903Z",
               "id": "584753543748bc0800542762",
+              "isPublic": false,
               "organization": {
                 "name": "My Organization Name",
                 "createdAt": "2016-12-07T00:09:56.361Z",
@@ -85,6 +94,7 @@
               "createdAt": "2016-12-07T00:09:56.906Z",
               "updatedAt": "2016-12-07T00:09:56.907Z",
               "id": "584753543748bc0800542763",
+              "isPublic": false,
               "organization": {
                 "name": "My Organization Name",
                 "createdAt": "2016-12-07T00:09:56.361Z",
@@ -100,6 +110,7 @@
               "createdAt": "2016-12-07T00:09:56.909Z",
               "updatedAt": "2016-12-07T00:09:56.909Z",
               "id": "584753543748bc0800542764",
+              "isPublic": false,
               "organization": {
                 "name": "My Organization Name",
                 "createdAt": "2016-12-07T00:09:56.361Z",
@@ -132,6 +143,7 @@
             "createdAt": "2016-12-06T23:59:02.127Z",
             "updatedAt": "2016-12-06T23:59:02.127Z",
             "id": "5848523b9e330308008dc298",
+            "isPublic": false,
             "organization": {
               "name": "My Organization Name",
               "createdAt": "2016-12-06T23:59:02.127Z",
@@ -166,7 +178,14 @@
           "isRequired": false,
           "description": "the text you wish to present to your users (ex. _\"Show us your best victory dance!\"_)",
           "exampleValue": "This is some updated teleprompter text"
-        }
+        },
+        {
+          "name": "isPublic",
+          "type": "boolean",
+          "isRequired": false,
+          "description": "Setting this to true publishes your campaign to public feeds such as the HILITE app.",
+          "exampleValue": true
+        }        
       ],
       "responseExample": {
         "responseCode": 200,
@@ -179,6 +198,7 @@
             "createdAt": "2016-12-06T23:59:02.127Z",
             "updatedAt": "2016-12-06T23:59:02.127Z",
             "id": "584750c689b67e0700048cd3",
+            "isPublic": false,
             "organization": {
               "name": "My Organization Name",
               "createdAt": "2016-12-06T23:59:01.430Z",
@@ -210,6 +230,7 @@
             "createdAt": "2016-12-06T23:59:02.127Z",
             "updatedAt": "2016-12-06T23:59:02.127Z",
             "id": "584750c689b67e0700048cd3",
+            "isPublic": false,
             "organization": {
               "name": "My Organization Name",
               "createdAt": "2016-12-06T23:59:01.430Z",
