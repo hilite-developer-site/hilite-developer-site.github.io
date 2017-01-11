@@ -454,19 +454,17 @@
           "url": "http://completed.url.com",
           "createdAt": "2016-12-09T21:32:11.934Z",
           "updatedAt": "2016-12-09T21:32:11.934Z",
-          "id": "584b22db62858207000577cc",
+          "id": "584b22db62858207000577cc",          
           "producer": {
-            "producer": {
-              "displayName": "A Display.Name",
-              "email": "anEmail@email.com",
-              "firstName": "John",
-              "lastName": "Doe",
-              "uid": "aThirdPartyUID",
-              "data": {
-                "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
-              }
+            "displayName": "A Display.Name",
+            "email": "anEmail@email.com",
+            "firstName": "John",
+            "lastName": "Doe",
+            "uid": "aThirdPartyUID",
+            "data": {
+              "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
             }
-          }
+          }          
         }
       }
     },

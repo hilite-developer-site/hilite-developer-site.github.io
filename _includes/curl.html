@@ -28,12 +28,12 @@
             {% assign params = params  | append: '"' | append: param.name  | append: '"' %}
             {% assign params = params | append: " : " %}
             {% if param.type == "boolean" %}
-            {% assign params = params  | append: param.exampleValue %}        
+                {% assign params = params  | append: param.exampleValue %}        
             {% else %}
-            {% assign params = params  | append: '"' | append: param.exampleValue  | append: '"' %}        
+                {% assign params = params  | append: '"' | append: param.exampleValue  | append: '"' %}        
             {% endif %}            
             {% if forloop.last == false %} 
-            {% assign params = params | append: ', ' %}
+                {% assign params = params | append: ', ' %}
             {% endif %}
         {% endfor %}
         {% assign params =  params | append: "}'" %}    
