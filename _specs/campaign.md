@@ -4,6 +4,6 @@ title: Campaign
 category: spec
 ---
 
-## Campaign
+## **Campaign**
 
 {% include spec.html spec=site.data.specs.campaign %}
