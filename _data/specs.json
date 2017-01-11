@@ -1,0 +1,68 @@
+{
+  "version": "0.05",
+  "campaign": {
+    "title": "Campaign",
+    "description": "description here",
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "uid",
+        "type": "guid",
+        "description": "name of the campaign (ex. _\"Super Bowl Victory Dance\"_)",
+        "exampleValue": "My Campaign Name"
+      },
+      {
+        "name": "teleprompter",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "isPublic",
+        "type": "boolean",
+        "description": "Defaults to false. Setting this to true publishes your campaign to public feeds such as the HILITE app.",
+        "exampleValue": true
+      },
+      {
+        "name": "orgainizationId",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "createdAt",
+        "type": "timestamp",
+        "description": "Date and time created. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      },
+      {
+        "name": "updatedAt",
+        "type": "timestamp",
+        "description": "Date and time last updated. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      },
+      {
+        "name": "organization",
+        "type": "json",
+        "description": "Conforms to the organization spec",
+        "exampleValue": {
+          "name": "My Organization Name",
+          "createdAt": "2016-12-06T23:59:01.430Z",
+          "updatedAt": "2016-12-06T23:59:01.430Z",
+          "id": "584750c589b67e0700048cc9"
+        }
+      }
+    ]
+  }
+}
