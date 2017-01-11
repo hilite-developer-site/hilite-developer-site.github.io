@@ -1,0 +1,28 @@
+{% assign spec = include.spec %}
+
+## **Description**: 
+
+{{ spec.description }}`
+
+## **Params**    
+
+
+{% for param in spec.params %}
+
+### **{{ param.name }}**
+
+**Type:** {{ param.type }}
+
+**Description:** {{ param.description }}
+
+{% if param.type == "json" %}
+**Example:**
+<pre><code class='json'>{{ param.exampleValue | jsonify }}</code></pre>
+{% else %}
+**Example:** `{{ param.exampleValue | jsonify }}`
+{% endif %}
+
+
+---
+<br>
+{% endfor %}
