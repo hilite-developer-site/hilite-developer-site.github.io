@@ -29,7 +29,7 @@
         "exampleValue": true
       },
       {
-        "name": "orgainizationId",
+        "name": "organizationId",
         "type": "string",
         "description": "description",
         "exampleValue": "exampleValue"
