@@ -28,7 +28,7 @@
       }
     ]
   },
-  "campaign": {    
+  "campaign": {
     "params": [
       {
         "name": "id",
@@ -81,7 +81,7 @@
       {
         "name": "organization",
         "type": "json",
-        "description": "Conforms to the organization spec",
+        "description": "Conforms to the organization specification",
         "exampleValue": {
           "name": "My Organization Name",
           "createdAt": "2016-12-06T23:59:01.430Z",
@@ -101,7 +101,7 @@
       },
       {
         "name": "url",
-        "type": "string",        
+        "type": "string",
         "description": "Path to the originally uploaded, raw file.",
         "exampleValue": "https://cdn.hilite.media/organization/1234/campaign/1234/file.mov"
       },
@@ -132,13 +132,13 @@
       {
         "name": "producer",
         "type": "json",
-        "description": "Conforms to the producer spec. Optional metadata about the person uploading the deliverable.",
+        "description": "Conforms to the producer specification. Optional metadata about the person uploading the deliverable.",
         "exampleValue": {
           "uid": "aThirdPartyUID",
           "email": "anEmail@email.com",
           "displayName": "A Display.Name",
           "firstName": "John",
-          "lastName": "Doe",              
+          "lastName": "Doe",
           "data": {
             "someField": "someValue"
           }
@@ -186,6 +186,58 @@
           "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
         }
       }
+    ]
+  },
+  "webhook": {
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "584750c589b67e0700048cc9"
+      },
+      {
+        "name": "displayName",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "My Webhook Name"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "A description of what the webhook does"
+      },
+      {
+        "name": "webHookHandle",
+        "type": "string",
+        "description": "Every webhook has a unique handle that we use to identify it by. One way to think of it is like an event name that we are listening for. Handles will always be all uppercase and snake case.",
+        "exampleValue": "MY_WEBHOOK_HANDLE"
+      },
+      {
+        "name": "organizationId",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "584750c589b67e0700048cc9"
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "description": "The url that the webhook should send a POST request to. Defaults to null if not defined.",
+        "exampleValue": "https://someserver.com/someendpoint"
+      },
+      {
+        "name": "createdAt",
+        "type": "timestamp",
+        "description": "Date and time created. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      },
+      {
+        "name": "updatedAt",
+        "type": "timestamp",
+        "description": "Date and time last updated. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      },
     ]
   }
 }
