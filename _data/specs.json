@@ -1,5 +1,33 @@
 {
   "version": "0.05",
+  "organization": {
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "584750c589b67e0700048cc9"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "Bobs Widgets"
+      },
+      {
+        "name": "createdAt",
+        "type": "timestamp",
+        "description": "Date and time created. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      },
+      {
+        "name": "updatedAt",
+        "type": "timestamp",
+        "description": "Date and time last updated. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      }
+    ]
+  },
   "campaign": {    
     "params": [
       {
@@ -114,6 +142,48 @@
           "data": {
             "someField": "someValue"
           }
+        }
+      }
+    ]
+  },
+  "producer": {
+    "params": [
+      {
+        "name": "displayName",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "firstName",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "lastName",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "uid",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "exampleValue"
+      },
+      {
+        "name": "data",
+        "type": "json",
+        "description": "description",
+        "exampleValue": {
+          "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
         }
       }
     ]

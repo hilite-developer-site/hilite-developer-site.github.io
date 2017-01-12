@@ -32,12 +32,12 @@
           "isRequired": false,
           "description": "Defaults to false. Setting this to true publishes your campaign to public feeds such as the HILITE app.",
           "exampleValue": true
-        }        
+        }
       ],
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {            
+          "campaign": {
             "uid": "someuniqueid",
             "teleprompter": "test teleprompter",
             "organizationId": "584750c589b67e0700048cc9",
@@ -70,7 +70,7 @@
         "responseCode": 200,
         "data": {
           "campaigns": [
-            {              
+            {
               "uid": "Campaign Name 1",
               "teleprompter": "testing one",
               "organizationId": "584753543748bc080054275d",
@@ -86,7 +86,7 @@
                 "id": "584753543748bc080054275d"
               }
             },
-            {              
+            {
               "uid": "Campaign Name 2",
               "teleprompter": "testing two",
               "organizationId": "584753543748bc080054275d",
@@ -102,7 +102,7 @@
                 "id": "584753543748bc080054275d"
               }
             },
-            {              
+            {
               "uid": "Campaign Name 3",
               "teleprompter": "testing three",
               "organizationId": "584753543748bc080054275d",
@@ -135,7 +135,7 @@
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {            
+          "campaign": {
             "uid": "My Campaign Name",
             "teleprompter": "This is some teleprompter text",
             "organizationId": "5848523a9e330308008dc295",
@@ -185,12 +185,12 @@
           "isRequired": false,
           "description": "Setting this to true publishes your campaign to public feeds such as the HILITE app.",
           "exampleValue": true
-        }        
+        }
       ],
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {            
+          "campaign": {
             "uid": "My Campaign Name",
             "teleprompter": "This is some updated teleprompter text",
             "organizationId": "584750c589b67e0700048cc9",
@@ -208,7 +208,7 @@
           }
         }
       }
-    },    
+    },
     {
       "title": "Delete",
       "description": "Delete a campaign by its ID",
@@ -222,7 +222,7 @@
       "responseExample": {
         "responseCode": 200,
         "data": {
-          "campaign": {            
+          "campaign": {
             "uid": "someuniqueid",
             "teleprompter": "test teleprompter",
             "organizationId": "584750c589b67e0700048cc9",
@@ -383,15 +383,13 @@
                     "updatedAt": "2016-12-09T21:32:11.934Z",
                     "id": "584b22db62858207000577cc",
                     "producer": {
-                      "producer": {
-                        "displayName": "A Display.Name",
-                        "email": "anEmail@email.com",
-                        "firstName": "John",
-                        "lastName": "Doe",
-                        "uid": "aThirdPartyUID",
-                        "data": {
-                          "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
-                        }
+                      "displayName": "A Display.Name",
+                      "email": "anEmail@email.com",
+                      "firstName": "John",
+                      "lastName": "Doe",
+                      "uid": "aThirdPartyUID",
+                      "data": {
+                        "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
                       }
                     }
                   },
@@ -454,7 +452,7 @@
           "url": "http://completed.url.com",
           "createdAt": "2016-12-09T21:32:11.934Z",
           "updatedAt": "2016-12-09T21:32:11.934Z",
-          "id": "584b22db62858207000577cc",          
+          "id": "584b22db62858207000577cc",
           "producer": {
             "displayName": "A Display.Name",
             "email": "anEmail@email.com",
@@ -464,7 +462,7 @@
             "data": {
               "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
             }
-          }          
+          }
         }
       }
     },
@@ -568,7 +566,7 @@
             "email": "anEmail@email.com",
             "displayName": "A Display.Name",
             "firstName": "John",
-            "lastName": "Doe",            
+            "lastName": "Doe",
             "data": {
               "someField": "someValue"
             }
@@ -591,7 +589,7 @@
               "email": "anEmail@email.com",
               "displayName": "A Display.Name",
               "firstName": "John",
-              "lastName": "Doe",              
+              "lastName": "Doe",
               "data": {
                 "someField": "someValue"
               }
