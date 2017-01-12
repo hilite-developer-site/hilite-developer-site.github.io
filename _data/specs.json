@@ -1,18 +1,16 @@
 {
   "version": "0.05",
-  "campaign": {
-    "title": "Campaign",
-    "description": "description here",
+  "campaign": {    
     "params": [
       {
         "name": "id",
         "type": "string",
         "description": "description",
-        "exampleValue": "exampleValue"
+        "exampleValue": "584750c589b67e0700048cc9"
       },
       {
         "name": "uid",
-        "type": "guid",
+        "type": "string",
         "description": "name of the campaign (ex. _\"Super Bowl Victory Dance\"_)",
         "exampleValue": "My Campaign Name"
       },
@@ -32,7 +30,7 @@
         "name": "organizationId",
         "type": "string",
         "description": "description",
-        "exampleValue": "exampleValue"
+        "exampleValue": "584750c589b67e0700048cc9"
       },
       {
         "name": "status",
@@ -61,6 +59,61 @@
           "createdAt": "2016-12-06T23:59:01.430Z",
           "updatedAt": "2016-12-06T23:59:01.430Z",
           "id": "584750c589b67e0700048cc9"
+        }
+      }
+    ]
+  },
+  "deliverable": {
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "584750c589b67e0700048cc9"
+      },
+      {
+        "name": "url",
+        "type": "string",        
+        "description": "Path to the originally uploaded, raw file.",
+        "exampleValue": "https://cdn.hilite.media/organization/1234/campaign/1234/file.mov"
+      },
+      {
+        "name": "campaignId",
+        "type": "string",
+        "description": "description",
+        "exampleValue": "584750c589b67e0700048cc9"
+      },
+      {
+        "name": "createdAt",
+        "type": "timestamp",
+        "description": "Date and time created. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      },
+      {
+        "name": "updatedAt",
+        "type": "timestamp",
+        "description": "Date and time last updated. UTC",
+        "exampleValue": "2016-12-06T23:59:02.127Z"
+      },
+      {
+        "name": "brandedUrl",
+        "type": "string",
+        "description": "Path to the uploaded file after it has been processed, normalized, and optimzied by HILITE.",
+        "exampleValue": "https://cdn.hilite.media/organization/1234/campaign/1234/branded/file.mov"
+      },
+      {
+        "name": "producer",
+        "type": "json",
+        "description": "Conforms to the producer spec. Optional metadata about the person uploading the deliverable.",
+        "exampleValue": {
+          "uid": "aThirdPartyUID",
+          "email": "anEmail@email.com",
+          "displayName": "A Display.Name",
+          "firstName": "John",
+          "lastName": "Doe",              
+          "data": {
+            "someField": "someValue"
+          }
         }
       }
     ]

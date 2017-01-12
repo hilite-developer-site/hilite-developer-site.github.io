@@ -6,4 +6,6 @@ category: spec
 
 ## **Campaign**
 
+description here
+
 {% include spec.html spec=site.data.specs.campaign %}
