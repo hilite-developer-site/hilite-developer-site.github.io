@@ -33,7 +33,7 @@
       {
         "name": "id",
         "type": "string",
-        "description": "description",
+        "description": "uniquue id of the campaign within HILITE",
         "exampleValue": "584750c589b67e0700048cc9"
       },
       {
@@ -45,8 +45,8 @@
       {
         "name": "teleprompter",
         "type": "string",
-        "description": "description",
-        "exampleValue": "exampleValue"
+        "description": "Instructions for your campaign. Text description of what kind of content you wish to receive.",
+        "exampleValue": "Show us your best victory dance!!"
       },
       {
         "name": "isPublic",
@@ -57,14 +57,14 @@
       {
         "name": "organizationId",
         "type": "string",
-        "description": "description",
+        "description": "Unique id of the organization this campaign is associated with.",
         "exampleValue": "584750c589b67e0700048cc9"
       },
       {
         "name": "status",
         "type": "string",
-        "description": "description",
-        "exampleValue": "exampleValue"
+        "description": "Short description of the campaigns current status.",
+        "exampleValue": "pending fulfillment"
       },
       {
         "name": "createdAt",
@@ -81,7 +81,7 @@
       {
         "name": "organization",
         "type": "json",
-        "description": "Conforms to the organization specification",
+        "description": "Conforms to the organization specification.",
         "exampleValue": {
           "name": "My Organization Name",
           "createdAt": "2016-12-06T23:59:01.430Z",
@@ -94,7 +94,7 @@
   "deliverable": {
     "params": [
       {
-        "name": "id",
+        "name": "uniquue id of the deliverable within HILITE",
         "type": "string",
         "description": "description",
         "exampleValue": "584750c589b67e0700048cc9"
@@ -102,13 +102,13 @@
       {
         "name": "url",
         "type": "string",
-        "description": "Path to the originally uploaded, raw file.",
+        "description": "Path to the uploaded file.",
         "exampleValue": "https://cdn.hilite.media/organization/1234/campaign/1234/file.mov"
       },
       {
         "name": "campaignId",
         "type": "string",
-        "description": "description",
+        "description": "Uniquue id of the campaign this deliverable is associated with.",
         "exampleValue": "584750c589b67e0700048cc9"
       },
       {
@@ -151,37 +151,37 @@
       {
         "name": "displayName",
         "type": "string",
-        "description": "description",
-        "exampleValue": "exampleValue"
+        "description": "Display name of the producer.",
+        "exampleValue": "Johnny Appleseed"
       },
       {
         "name": "email",
         "type": "string",
-        "description": "description",
-        "exampleValue": "exampleValue"
+        "description": "Email address of the producer",
+        "exampleValue": "jappleseed@hilite.media"
       },
       {
         "name": "firstName",
         "type": "string",
-        "description": "description",
-        "exampleValue": "exampleValue"
+        "description": "First name of the producer",
+        "exampleValue": "Johnny"
       },
       {
         "name": "lastName",
         "type": "string",
-        "description": "description",
-        "exampleValue": "exampleValue"
+        "description": "Last name of the producer",
+        "exampleValue": "Appleseed"
       },
       {
         "name": "uid",
         "type": "string",
-        "description": "description",
-        "exampleValue": "exampleValue"
+        "description": "Unique ID from YOUR systems. Provides a way to uniquely identify this producer. We recommend that you use this to store their user id or some other unique identifier.",
+        "exampleValue": "12345667754abcefg"
       },
       {
         "name": "data",
         "type": "json",
-        "description": "description",
+        "description": "Store any additional information about the producer, such as social media handles or tracking information in plain JSON format.",
         "exampleValue": {
           "customFieldName": "the data object is a place for you to store custom data unique to your organization. This field is just an example."
         }
@@ -193,19 +193,19 @@
       {
         "name": "id",
         "type": "string",
-        "description": "description",
+        "description": "Uniquue id of the webhook within HILITE",
         "exampleValue": "584750c589b67e0700048cc9"
       },
       {
         "name": "displayName",
         "type": "string",
-        "description": "description",
+        "description": "Display name of the webhook",
         "exampleValue": "My Webhook Name"
       },
       {
         "name": "description",
         "type": "string",
-        "description": "description",
+        "description": "A description of the webhook",
         "exampleValue": "A description of what the webhook does"
       },
       {
@@ -217,7 +217,7 @@
       {
         "name": "organizationId",
         "type": "string",
-        "description": "description",
+        "description": "Uniquue id of the organization within HILITE",
         "exampleValue": "584750c589b67e0700048cc9"
       },
       {
