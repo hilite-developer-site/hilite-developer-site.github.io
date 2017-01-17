@@ -12,6 +12,8 @@ collections:
     output: true
   endpoints:
     output: true
+  webhooks:
+    output: true
 
 # Build settings
 markdown: kramdown
