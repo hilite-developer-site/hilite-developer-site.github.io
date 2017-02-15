@@ -237,7 +237,52 @@
         "type": "timestamp",
         "description": "Date and time last updated. UTC",
         "exampleValue": "2016-12-06T23:59:02.127Z"
+      }
+    ]
+  },
+  "pagination": {
+    "params": [
+      {
+        "name": "operations",
+        "type": "json",
+        "description": "Conforms to the operations specification. A set of available web requests.",
+        "exampleValue": {
+          "nextPage": {
+            "method": "GET",
+            "name": "nextPage",
+            "url": "/v1/routeName?page=2&limit=10"
+          },
+          "previousPage": {
+            "method": "GET",
+            "name": "nextPage",
+            "url": "/v1/routeName?page=0&limit=10"
+          }
+        }
       },
+      {
+        "name": "currentPage",
+        "type": "int",
+        "description": "Total number of pages in the collection",
+        "exampleValue": 5
+      },
+      {
+        "name": "currentPage",
+        "type": "int",
+        "description": "Current page of the collection we are on.",
+        "exampleValue": 2
+      },
+      {
+        "name": "perPage",
+        "type": "int",
+        "description": "How many items per page",
+        "exampleValue": 2
+      },
+      {
+        "name": "totalItemsCount",
+        "type": "int",
+        "description": "Total number of items in the collection",
+        "exampleValue": 234
+      }
     ]
   }
 }
