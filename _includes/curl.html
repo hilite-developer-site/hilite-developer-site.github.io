@@ -1,3 +1,8 @@
+{% assign queryString = '' %}
+{% if include.endpoint.isAuthenticated %}
+    {% assign queryString = '?token=76124e30-7136-4211-b411-94ce7444e9eb' %}
+{% endif %}
+
 {% comment %} build our headers {%endcomment%}
 {% assign headers = '-H "Content-Type: ' | append: include.endpoint.headers.contentType | append: '"'%}
 {% for header in include.endpoint.headers.additionalHeaders %}    
@@ -8,36 +13,51 @@
 {% comment %} build our request body {%endcomment%}
 {% assign params = '' %}
 {% if include.endpoint.params %}    
-    {% if include.endpoint.headers.contentType == 'multipart/form-data' %}
+    {% if include.endpoint.method == 'GET' %}        
+        
+        {% if include.endpoint.isAuthenticated %}
+            {% assign queryString =  queryString | append: '&' %}
+        {% else %}
+            {% assign queryString =  queryString | append: '?' %}
+        {% endif %}
 
         {% for param in include.endpoint.params %}
-            {% assign params = params | append: '-F ' %}            
-            {% if param.type == 'file' %}
-                {% assign params = params | append: param.name | append: "=@" | append: param.exampleValue %}
-            {% elsif param.type == 'json' %}                
-                {% assign json = param.exampleValue | jsonify | replace: ',', '%2C' %}
-                {% assign params = params | append: param.name | append: "=" | append: json %}
-            {% else %}
-                {% assign params = params | append: param.name | append: "=" | append: param.exampleValue %}
-            {% endif %}            
+            {% if forloop.index > 1 %}
+                {% assign queryString = queryString | append: '&' %}
+            {% endif %}
+            {% assign queryString = queryString | append: param.name | append: "=" | append: param.exampleValue %}
         {% endfor %}
 
     {% else %}
-        {% assign params =  "-d '{" %}
-        {% for param in include.endpoint.params %}        
-            {% assign params = params  | append: '"' | append: param.name  | append: '"' %}
-            {% assign params = params | append: " : " %}
-            {% if param.type == "boolean" %}
-                {% assign params = params  | append: param.exampleValue %}        
-            {% else %}
-                {% assign params = params  | append: '"' | append: param.exampleValue  | append: '"' %}        
-            {% endif %}            
-            {% if forloop.last == false %} 
-                {% assign params = params | append: ', ' %}
-            {% endif %}
-        {% endfor %}
-        {% assign params =  params | append: "}'" %}    
-    {% endif %}
+        {% if include.endpoint.headers.contentType == 'multipart/form-data' %}
+            {% for param in include.endpoint.params %}
+                {% assign params = params | append: '-F ' %}            
+                {% if param.type == 'file' %}
+                    {% assign params = params | append: param.name | append: "=@" | append: param.exampleValue %}
+                {% elsif param.type == 'json' %}                
+                    {% assign json = param.exampleValue | jsonify | replace: ',', '%2C' %}
+                    {% assign params = params | append: param.name | append: "=" | append: json %}
+                {% else %}
+                    {% assign params = params | append: param.name | append: "=" | append: param.exampleValue %}
+                {% endif %}            
+            {% endfor %}
+        {% else %}
+            {% assign params =  "-d '{" %}
+            {% for param in include.endpoint.params %}        
+                {% assign params = params  | append: '"' | append: param.name  | append: '"' %}
+                {% assign params = params | append: " : " %}
+                {% if param.type == "boolean" %}
+                    {% assign params = params  | append: param.exampleValue %}        
+                {% else %}
+                    {% assign params = params  | append: '"' | append: param.exampleValue  | append: '"' %}        
+                {% endif %}            
+                {% if forloop.last == false %} 
+                    {% assign params = params | append: ', ' %}
+                {% endif %}
+            {% endfor %}
+            {% assign params =  params | append: "}'" %}    
+        {% endif %}
+    {% endif %}    
 {% endif %}
 
 {% comment %} get the HTTP verb {%endcomment%}
@@ -48,9 +68,7 @@
 {% assign url = url | append: site.api_host %}
 {% assign url = url | append: include.endpoint.url %}
 {% assign url = url | replace: ':id', '584753543748bc0800542762' %}
-{% if include.endpoint.isAuthenticated %}
-    {% assign url = url | append: '?token=76124e30-7136-4211-b411-94ce7444e9eb' %}
-{% endif %}
+{% assign url = url | append: queryString %}
 {% assign url = url | append: '"' %}
 
 <pre class="terminal"><code>$ curl -X {{ method }} {{ headers }} {{ params }} {{ url }}</code></pre>    

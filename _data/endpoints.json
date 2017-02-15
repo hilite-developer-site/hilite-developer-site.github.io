@@ -62,6 +62,22 @@
       "method": "GET",
       "url": "/v1/campaigns",
       "isAuthenticated": true,
+      "params": [
+        {
+          "name": "page",
+          "type": "int",
+          "isRequired": false,
+          "description": "The page of the collection you wish to view. Defaults to 0",
+          "exampleValue": 0
+        },
+        {
+          "name": "limit",
+          "type": "int",
+          "isRequired": false,
+          "description": "How many items to return per page. Defaults to 10",
+          "exampleValue": 0
+        }
+      ],
       "headers": {
         "contentType": "application/json",
         "additionalHeaders": []
@@ -119,6 +135,24 @@
               }
             }
           ]
+        },
+        "pagination": {
+          "operations": {
+            "nextPage": {
+              "method": "GET",
+              "name": "nextPage",
+              "url": "/v1/campaigns?page=3&limit=10"
+            },
+            "previousPage": {
+              "method": "GET",
+              "name": "previousPage",
+              "url": "/v1/campaigns?page=0&limit=10"
+            }
+          },
+          "totalPages": 10,
+          "currentPage": 2,
+          "perPage": 10,
+          "totalItemsCount": 100
         }
       }
     },
@@ -364,6 +398,22 @@
       "description": "Return all deliverables for your organization",
       "method": "GET",
       "url": "/v1/deliverables",
+      "params": [
+        {
+          "name": "page",
+          "type": "int",
+          "isRequired": false,
+          "description": "The page of the collection you wish to view. Defaults to 0",
+          "exampleValue": 0
+        },
+        {
+          "name": "limit",
+          "type": "int",
+          "isRequired": false,
+          "description": "How many items to return per page. Defaults to 10",
+          "exampleValue": 0
+        }
+      ],
       "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
@@ -433,6 +483,24 @@
               }
             }
           ]
+        },
+        "pagination": {
+          "operations": {
+            "nextPage": {
+              "method": "GET",
+              "name": "nextPage",
+              "url": "/v1/deliverables?page=3&limit=10"
+            },
+            "previousPage": {
+              "method": "GET",
+              "name": "previousPage",
+              "url": "/v1/deliverables?page=0&limit=10"
+            }
+          },
+          "totalPages": 10,
+          "currentPage": 2,
+          "perPage": 10,
+          "totalItemsCount": 100
         }
       }
     },
@@ -471,6 +539,22 @@
       "description": "Finds all deliverables associated with a campaign",
       "method": "GET",
       "url": "/v1/campaigns/:id/deliverables",
+      "params": [
+        {
+          "name": "page",
+          "type": "int",
+          "isRequired": false,
+          "description": "The page of the collection you wish to view. Defaults to 0",
+          "exampleValue": 0
+        },
+        {
+          "name": "limit",
+          "type": "int",
+          "isRequired": false,
+          "description": "How many items to return per page. Defaults to 10",
+          "exampleValue": 0
+        }
+      ],
       "isAuthenticated": true,
       "headers": {
         "contentType": "application/json",
@@ -535,6 +619,24 @@
               }
             }
           ]
+        },
+        "pagination": {
+          "operations": {
+            "nextPage": {
+              "method": "GET",
+              "name": "nextPage",
+              "url": "/v1/campaigns/12454534543/deliverables?page=3&limit=10"
+            },
+            "previousPage": {
+              "method": "GET",
+              "name": "previousPage",
+              "url": "/v1/campaigns/12454534543/deliverables?page=0&limit=10"
+            }
+          },
+          "totalPages": 10,
+          "currentPage": 2,
+          "perPage": 10,
+          "totalItemsCount": 100
         }
       }
     },
